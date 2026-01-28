@@ -1,23 +1,18 @@
 # Snakemake Profile for SLURM Submission 
 
 # 1. GENERAL SNAKEMAKE SETTINGS
-jobs: 12                       # Max concurrent jobs
+jobs: 20                       # Max concurrent jobs - allows many samples to run assembly in parallel
 use-conda: True
 conda-frontend: mamba
 latency-wait: 4               # Time (seconds) to wait between job status checks
-
-# CRITICAL: We are removing 'executor: slurm' and 'executor-args' because the modern
-# plugin adds the cluster-hostile '--distribution=none' flag.
-# By OMITTING the 'executor' and using 'cluster:', we force Snakemake to use the
-# reliable legacy submission method with a custom, clean sbatch string.
 
 # 2. SNAKEMAKE RESOURCE DEFAULTS
 executor: slurm
 default-resources:
   slurm_partition: "math-alderaan"
-  runtime: "2880"             # 48 hours in minutes
-  mem_mb: 65536                # Default RAM
-  threads: 8                 # Default threads
+  runtime: "2880"             # 48 hours in minutes (max for math-alderaan is 7 days)
+  mem_mb: 131072              # 128GB per job - assembly tools are memory intensive
+  threads: 16                 # 16 threads per job - good balance for assembly
   slurm_account: biology-miller-annotation
   slurm_logdir: /storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs
   slurm_mail_type: "END,FAIL"  # Email on job completion or failure

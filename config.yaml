@@ -1,13 +1,34 @@
 # Configuration file for Metagenomic Multi-Assembly Wrapper
 
+# TEST MODE - Set to True to only run on S5 (has both long and short reads)
+# Set to False to run all samples configured below
+test_mode: True
+
 # Data directory (absolute path) - organized by sample
 data_dir: "/storage/biology/projects/miller-lowry/beitner/data"
 
-# Sample names - each sample has its own directory
-samples:
+# Sample names organized by read type
+# long_read_samples: have both long and short reads (ONT + Illumina)
+long_read_samples:
   - S1
   - S2
   - S5
+
+# all samples: includes both long+short and short-only samples
+# short-only: S3, S4, S6, S7, S8, S9, S10, S11, S12
+all_samples:
+  - S1
+  - S2
+  - S3
+  - S4
+  - S5
+  - S6
+  - S7
+  - S8
+  - S9
+  - S10
+  - S11
+  - S12
 
 # Output directory for all assemblies (relative to working directory)
 output_dir: "assemblies"
