@@ -51,6 +51,8 @@ From: ubuntu:22.04
         spades \
         nextpolish \
         metamdbg \
+        bwa \
+        samtools \
         --channel bioconda \
         --channel conda-forge \
         --override-channels
@@ -77,14 +79,15 @@ From: ubuntu:22.04
     echo "This container includes the following assemblers and polishers:"
     echo "  - idba_ud"
     echo "  - megahit"
-    echo "  - flye"
-    echo "  - nanomdbg"
+    echo "  - metaMDBG"
     echo "  - spades.py (for MetaSPAdes/SPAdes)"
-    echo "  - nextpolish.py"
+    echo "  - nextpolish"
+    echo "  - bwa (for read mapping)"
+    echo "  - samtools (for BAM manipulation)"
     echo "-------------------------------------------------------------------"
     echo "To run a specific tool, specify it as an argument, e.g.:"
     echo "singularity exec assembler.sif megahit --help"
-    echo "singularity exec assembler.sif flye --version"
+    echo "singularity exec assembler.sif bwa mem"
     echo "==================================================================="
     
     # Execute the command passed by the user

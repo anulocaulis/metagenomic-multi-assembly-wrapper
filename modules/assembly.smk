@@ -139,10 +139,10 @@ rule bwa_mem_map_to_flye:
         bam = f"{config['output_dir']}/{{sample}}/assembly.flye/mapped_short_reads.bam",
         bai = f"{config['output_dir']}/{{sample}}/assembly.flye/mapped_short_reads.bam.bai"
     params:
-        container_path = ASSEMBLY_CONTAINER,
+        container_path = QC_CONTAINER,
         outdir = f"{config['output_dir']}/{{sample}}/assembly.flye"
     threads: config["threads"]
-    container: ASSEMBLY_CONTAINER
+    container: QC_CONTAINER
     shell:
         """
         # 1. Index the Flye assembly with BWA

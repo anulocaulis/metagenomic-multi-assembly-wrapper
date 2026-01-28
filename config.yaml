@@ -1,0 +1,22 @@
+# Configuration file for Metagenomic Multi-Assembly Wrapper
+
+# Data directory (absolute path) - organized by sample
+data_dir: "/storage/biology/projects/miller-lowry/beitner/data"
+
+# Sample names - each sample has its own directory
+samples:
+  - S1
+  - S2
+  - S5
+
+# Output directory for all assemblies (relative to working directory)
+output_dir: "assemblies"
+
+# Number of threads to use (can be overridden per rule)
+threads: 16
+
+# Input read files - consistent naming pattern for all samples
+# Each sample directory contains: long_reads.bam and short_reads.fastq.gz
+input_reads:
+  long_bam: "/storage/biology/projects/miller-lowry/beitner/data/{sample}/long_reads.bam"
+  short_interleaved: "/storage/biology/projects/miller-lowry/beitner/data/{sample}/short_reads.fastq.gz"
