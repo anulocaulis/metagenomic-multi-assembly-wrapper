@@ -1,0 +1,42 @@
+Bootstrap: docker
+From: continuumio/miniconda3:latest
+
+# Minimal container with chopper for long-read quality filtering
+# To build: sudo singularity build chopper.sif chopper.def
+
+%post
+    # Update system
+    apt-get update
+    apt-get install -y --no-install-recommends wget bzip2
+
+    # Install chopper via conda
+    conda install -n base -c bioconda -c conda-forge -y chopper
+
+    # Cleanup
+    apt-get clean
+    conda clean -afy
+    rm -rf /var/lib/apt/lists/*
+
+%environment
+    export PATH="/opt/conda/bin:$PATH"
+
+%runscript
+    echo "Chopper - quality filtering for long reads"
+    echo "Usage: singularity exec chopper.sif chopper [options]"
+    exec "$@"
+
+%labels
+    Maintainer lowry-nitrogen-team
+    CreationDate 2026-01-30
+    Version 1.0
+    Description Minimal container with chopper for ONT read filtering
+
+%help
+    This container provides chopper for long-read quality filtering.
+    
+    Tool included:
+    - chopper: Quality and length filtering for long reads (ONT/PacBio)
+    
+    Example usage:
+    singularity exec chopper.sif chopper --help
+    singularity exec chopper.sif chopper --minlength 200 --quality 7 --threads 8 < input.fastq | gzip > filtered.fastq.gz

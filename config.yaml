@@ -2,7 +2,7 @@
 
 # TEST MODE - Set to True to only run on S5 (has both long and short reads)
 # Set to False to run all samples configured below
-test_mode: True
+test_mode: False
 
 # Data directory (absolute path) - organized by sample
 data_dir: "/storage/biology/projects/miller-lowry/beitner/data"
@@ -41,3 +41,9 @@ threads: 16
 input_reads:
   long_bam: "/storage/biology/projects/miller-lowry/beitner/data/{sample}/long_reads.bam"
   short_interleaved: "/storage/biology/projects/miller-lowry/beitner/data/{sample}/short_reads.fastq.gz"
+
+# Optional ONT adapter trimming (Porechop)
+porechop:
+  enabled: true
+  threads: 8
+  extra_args: ""

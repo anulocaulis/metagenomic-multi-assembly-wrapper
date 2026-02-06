@@ -1,17 +1,70 @@
 # ---
-# Step 0: Filter Long Reads (BAM to FASTQ with Chopper)
+# Step 0: Adapter trimming for long reads (Porechop)
+# ---
+rule adapter_trim_long_reads:
+    input:
+        bam = config["input_reads"]["long_bam"]
+    output:
+        trimmed_fastq = "data/{sample}_long_reads_porechop.fastq"
+    params:
+        temp_fastq = "data/{sample}_long_reads_temp.fastq.gz",
+        temp_fastq_uncompressed = "data/{sample}_long_reads_temp.fastq",
+        temp_fastq_porechop = "data/{sample}_long_reads_porechop.fastq",
+        qc_container = QC_CONTAINER,
+        porechop_container = PORECHOP_CONTAINER,
+        porechop_threads = config.get("porechop", {}).get("threads", 4),
+        porechop_extra_args = config.get("porechop", {}).get("extra_args", "")
+    threads: config["threads"]
+    container: QC_CONTAINER
+    log: "logs/adapter_trim_long_reads_{sample}.log"
+    benchmark: "benchmarks/adapter_trim_long_reads_{sample}.txt"
+    shell:
+        """
+        set -euo pipefail;
+
+        TEMP_FASTQ="{params.temp_fastq}"
+        TEMP_FASTQ_UNCOMPRESSED="{params.temp_fastq_uncompressed}"
+        TEMP_FASTQ_PORECHOP="{params.temp_fastq_porechop}"
+        WORKDIR=$(pwd)
+
+        # 1. Convert BAM to temporary FASTQ
+        echo "Converting BAM to temporary FASTQ..." >> {log}
+        singularity exec -B "$WORKDIR:$WORKDIR" -W "$WORKDIR" {params.qc_container} reformat.sh in={input.bam} out=$TEMP_FASTQ 2>> {log}
+
+        # 2. Decompress for Porechop
+        echo "Decompressing FASTQ for Porechop..." >> {log}
+        gunzip -c "$TEMP_FASTQ" > "$TEMP_FASTQ_UNCOMPRESSED" 2>> {log}
+
+        # 3. Adapter trimming with Porechop
+        echo "Running Porechop adapter trimming..." >> {log}
+        singularity exec -B "$WORKDIR:$WORKDIR" -W "$WORKDIR" {params.porechop_container} porechop \
+            -i "$TEMP_FASTQ_UNCOMPRESSED" \
+            -o "$TEMP_FASTQ_PORECHOP" \
+            -t {params.porechop_threads} \
+            {params.porechop_extra_args} \
+            2>> {log}
+
+        # 4. Move output into place
+        mv "$TEMP_FASTQ_PORECHOP" "{output.trimmed_fastq}"
+
+        # 5. Clean up
+        rm -f "$TEMP_FASTQ" "$TEMP_FASTQ_UNCOMPRESSED"
+        """
+
+# ---
+# Step 0b: Filter Long Reads (FASTQ with Chopper)
 # ---
 # Filters long reads using Chopper to remove low-quality and short reads.
 rule filter_long_reads:
     input:
-        bam = config["input_reads"]["long_bam"]
+        reads = "data/{sample}_long_reads_porechop.fastq"
     output:
         fastq = "data/{sample}_long_reads_filtered.fastq.gz"
     params:
-        temp_fastq = "data/{sample}_long_reads_temp.fastq.gz", # Temporary file path
-        chopper_minlength = 200,
-        chopper_quality = 7,
-        container_path = QC_CONTAINER
+        temp_fastq_uncompressed = "data/{sample}_long_reads_porechop.fastq",
+        minlength = 200,
+        minquality = 7,
+        chopper_container = CHOPPER_CONTAINER
     threads: config["threads"]
     container: QC_CONTAINER
     log: "logs/filter_long_reads_{sample}.log"
@@ -20,23 +73,23 @@ rule filter_long_reads:
         """
         set -euo pipefail;
 
-        CONTAINER="{params.container_path}"
-        THREADS="{threads}"
-        TEMP_FASTQ="{params.temp_fastq}"
+        THREADS={threads}
+        TEMP_FASTQ_UNCOMPRESSED="{params.temp_fastq_uncompressed}"
+        WORKDIR=$(pwd)
 
-        # 1. Convert BAM to temporary FASTQ (required by Chopper)
-        echo "Converting BAM to temporary FASTQ..."
-        singularity exec -B "$(pwd)" {params.container_path} reformat.sh in={input.bam} out=$TEMP_FASTQ 2>> {log}
+        # 1. Decompress for chopper
+        echo "Decompressing FASTQ for chopper..." >> {log}
+        gunzip -c "{input.reads}" > "$TEMP_FASTQ_UNCOMPRESSED" 2>> {log}
 
         # 2. Filter FASTQ using Chopper
-        echo "Filtering FASTQ with Chopper (minlen={params.chopper_minlength}, minq={params.chopper_quality})..."
-        singularity exec -B "$(pwd)" {params.container_path} chopper --minlength {params.chopper_minlength} \
-            --quality {params.chopper_quality} \
-            --threads $THREADS \
-            --input "$TEMP_FASTQ" | gzip > "{output.fastq}" 2>> {log}
+        echo "Filtering FASTQ with Chopper (minlength={params.minlength}, minquality={params.minquality})..." >> {log}
+        singularity exec -B "$WORKDIR:$WORKDIR" -W "$WORKDIR" {params.chopper_container} chopper \
+            --minlength {params.minlength} \
+            --quality {params.minquality} \
+            < "$TEMP_FASTQ_UNCOMPRESSED" | gzip > "{output.fastq}" 2>> {log}
 
         # 3. Clean up
-        rm -f "$TEMP_FASTQ"
+        rm -f "$TEMP_FASTQ_UNCOMPRESSED"
         """
 
 # ---
@@ -92,5 +145,6 @@ rule trim_illumina:
         "logs/trim_illumina_{sample}.log"
     shell:
         """
-        singularity exec {params.container_path} bbduk.sh in={input.reads} out={output.trimmed_reads} threads={threads} {params.bbduk_opts} 2>> {log}
+        WORKDIR=$(pwd)
+        singularity exec -B "$WORKDIR:$WORKDIR" -W "$WORKDIR" {params.container_path} bbduk.sh in={input.reads} out={output.trimmed_reads} threads={threads} {params.bbduk_opts} 2>> {log}
         """

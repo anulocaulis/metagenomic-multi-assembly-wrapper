@@ -29,7 +29,11 @@ rule metamdbg_assembly:
     threads: config["threads"]
     container: ASSEMBLY_CONTAINER
     shell:
-        "singularity exec --bind $(pwd):$(pwd) {params.container_path} metaMDBG asm --threads {threads} --in-ont {input.reads} --out-dir {params.outdir}"
+        """
+        singularity exec --bind $(pwd):$(pwd) {params.container_path} metaMDBG asm --threads {threads} --in-ont {input.reads} --out-dir {params.outdir}
+        # MetaMDBG outputs contigs.fasta.gz, decompress for consistency
+        gunzip -f {params.outdir}/contigs.fasta.gz
+        """
 
 
 # ---

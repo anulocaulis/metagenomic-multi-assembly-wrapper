@@ -10,3 +10,7 @@ qc/
 logs/
 slurm_logs/
 data/
+assemblies/
+trimmed_reads/
+benchmarks/
+checks/

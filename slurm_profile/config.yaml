@@ -11,7 +11,7 @@ executor: slurm
 default-resources:
   slurm_partition: "math-alderaan"
   runtime: "2880"             # 48 hours in minutes (max for math-alderaan is 7 days)
-  mem_mb: 131072              # 128GB per job - assembly tools are memory intensive
+  mem_mb: 245760              # 240GB per job - assembly tools need this for large datasets
   threads: 16                 # 16 threads per job - good balance for assembly
   slurm_account: biology-miller-annotation
   slurm_logdir: /storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs

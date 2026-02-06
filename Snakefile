@@ -2,7 +2,6 @@
 # Author: Mike Beitner
 # Date: January 28, 2026
 
-import os
 
 # ===========================
 # Configuration
@@ -30,6 +29,8 @@ else:
 ASSEMBLY_CONTAINER = "containers/assembler2.sif"
 FLYE_ASSEMBLY_CONTAINER = "containers/flye_assembler.sif"
 QC_CONTAINER = "containers/qc_tools_miniconda.sif"
+CHOPPER_CONTAINER = "containers/chopper_0.7.0--hdcf5f25_0.sif"
+PORECHOP_CONTAINER = "containers/porechop_0.2.4--py39h2de1943_9.sif"
 
 # ===========================
 # Include Module Rules
@@ -39,11 +40,31 @@ include: "modules/read_prep.smk"
 include: "modules/assembly.smk"
 
 # ===========================
+# Input Validation
+# ===========================
+
+rule check_inputs:
+       input:
+              long_reads=lambda: [config["input_reads"]["long_bam"].format(sample=s) for s in LONG_READ_SAMPLES],
+              short_reads=lambda: [config["input_reads"]["short_interleaved"].format(sample=s) for s in ALL_SAMPLES]
+       output:
+              "checks/inputs.ok"
+       message:
+              "Validating raw input files exist"
+       shell:
+              """
+              mkdir -p checks
+              touch {output}
+              """
+
+# ===========================
 # Target Rule
 # ===========================
 
 rule all:
     input:
+              # Validate raw inputs
+              "checks/inputs.ok",
         # Read prep outputs (all samples get trimmed short reads)
         expand("trimmed_reads/{sample}_interleaved_trimmed.fastq.gz", sample=ALL_SAMPLES),
         
