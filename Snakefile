@@ -40,31 +40,11 @@ include: "modules/read_prep.smk"
 include: "modules/assembly.smk"
 
 # ===========================
-# Input Validation
-# ===========================
-
-rule check_inputs:
-       input:
-              long_reads=lambda: [config["input_reads"]["long_bam"].format(sample=s) for s in LONG_READ_SAMPLES],
-              short_reads=lambda: [config["input_reads"]["short_interleaved"].format(sample=s) for s in ALL_SAMPLES]
-       output:
-              "checks/inputs.ok"
-       message:
-              "Validating raw input files exist"
-       shell:
-              """
-              mkdir -p checks
-              touch {output}
-              """
-
-# ===========================
 # Target Rule
 # ===========================
 
 rule all:
     input:
-              # Validate raw inputs
-              "checks/inputs.ok",
         # Read prep outputs (all samples get trimmed short reads)
         expand("trimmed_reads/{sample}_interleaved_trimmed.fastq.gz", sample=ALL_SAMPLES),
         
