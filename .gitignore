@@ -14,3 +14,7 @@ assemblies/
 trimmed_reads/
 benchmarks/
 checks/
+
+# Ignore scheduler/stdout-stderr artifacts
+*.out
+*.err

@@ -1,0 +1,900 @@
+bash: snakemake: command not found
+[32m[Mon Feb  9 14:10:44 2026]
+Finished jobid: 2 (Rule: trim_illumina)[0m
+[32m1 of 51 steps (2%) done[0m
+[33mExecute 1 jobs...[0m
+
+[32m[Mon Feb  9 14:10:44 2026]
+rule megahit_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S2/short_reads.fastq.gz
+    output: assemblies/S2/assembly.megahit/final.contigs.fa
+    jobid: 26
+    reason: Missing output files: assemblies/S2/assembly.megahit/final.contigs.fa
+    wildcards: output_dir=assemblies, sample=S2
+    threads: 16
+    resources: mem_mb=360000, mem_mib=343323, disk_mb=71273, disk_mib=67972, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 26 has been submitted with SLURM jobid 1794441 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_megahit_assembly/assemblies_S2/1794441.log).[0m
+[33mSelect jobs to execute...[0m
+[32m[Mon Feb  9 14:12:15 2026]
+Finished jobid: 11 (Rule: trim_illumina)[0m
+[32m2 of 51 steps (4%) done[0m
+[33mExecute 1 jobs...[0m
+
+[32m[Mon Feb  9 14:12:15 2026]
+rule trim_illumina:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S12/short_reads.fastq.gz
+    output: trimmed_reads/S12_interleaved_trimmed.fastq.gz
+    log: logs/trim_illumina_S12.log
+    jobid: 12
+    reason: Missing output files: trimmed_reads/S12_interleaved_trimmed.fastq.gz
+    wildcards: sample=S12
+    threads: 16
+    resources: mem_mb=360000, mem_mib=343323, disk_mb=69652, disk_mib=66426, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 12 has been submitted with SLURM jobid 1794442 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_trim_illumina/S12/1794442.log).[0m
+[33mSelect jobs to execute...[0m
+[32m[Mon Feb  9 14:42:48 2026]
+Finished jobid: 12 (Rule: trim_illumina)[0m
+[32m3 of 51 steps (6%) done[0m
+[33mExecute 1 jobs...[0m
+
+[32m[Mon Feb  9 14:42:48 2026]
+rule megahit_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S12/short_reads.fastq.gz
+    output: assemblies/S12/assembly.megahit/final.contigs.fa
+    jobid: 36
+    reason: Missing output files: assemblies/S12/assembly.megahit/final.contigs.fa
+    wildcards: output_dir=assemblies, sample=S12
+    threads: 16
+    resources: mem_mb=360000, mem_mib=343323, disk_mb=69652, disk_mib=66426, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 36 has been submitted with SLURM jobid 1794446 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_megahit_assembly/assemblies_S12/1794446.log).[0m
+[33mSelect jobs to execute...[0m
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[A                                [32m[Tue Feb 10 00:01:51 2026]
+Finished jobid: 26 (Rule: megahit_assembly)[0m
+[32m4 of 51 steps (8%) done[0m
+[33mExecute 1 jobs...[0m
+
+[32m[Tue Feb 10 00:01:51 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S12/short_reads.fastq.gz
+    output: assemblies/S12/assembly.metaspades/assembly.fasta
+    jobid: 48
+    reason: Missing output files: assemblies/S12/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S12
+    threads: 16
+    resources: mem_mb=360000, mem_mib=343323, disk_mb=69652, disk_mib=66426, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 48 has been submitted with SLURM jobid 1794509 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S12/1794509.log).[0m
+[33mSelect jobs to execute...[0m
+[32m[Tue Feb 10 00:44:24 2026]
+Finished jobid: 36 (Rule: megahit_assembly)[0m
+[32m5 of 51 steps (10%) done[0m
+[33mExecute 1 jobs...[0m
+
+[32m[Tue Feb 10 00:44:24 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S9/short_reads.fastq.gz
+    output: assemblies/S9/assembly.metaspades/assembly.fasta
+    jobid: 45
+    reason: Missing output files: assemblies/S9/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S9
+    threads: 16
+    resources: mem_mb=360000, mem_mib=343323, disk_mb=66214, disk_mib=63147, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 45 has been submitted with SLURM jobid 1794510 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S9/1794510.log).[0m
+[33mSelect jobs to execute...[0m
+[32m[Tue Feb 10 01:32:57 2026]
+Finished jobid: 35 (Rule: megahit_assembly)[0m
+[32m6 of 51 steps (12%) done[0m
+[33mExecute 1 jobs...[0m
+
+[32m[Tue Feb 10 01:32:57 2026]
+rule trim_illumina:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S9/short_reads.fastq.gz
+    output: trimmed_reads/S9_interleaved_trimmed.fastq.gz
+    log: logs/trim_illumina_S9.log
+    jobid: 9
+    reason: Missing output files: trimmed_reads/S9_interleaved_trimmed.fastq.gz
+    wildcards: sample=S9
+    threads: 16
+    resources: mem_mb=360000, mem_mib=343323, disk_mb=66214, disk_mib=63147, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 9 has been submitted with SLURM jobid 1794517 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_trim_illumina/S9/1794517.log).[0m
+[33mSelect jobs to execute...[0m
+[32m[Tue Feb 10 02:03:31 2026]
+Finished jobid: 9 (Rule: trim_illumina)[0m
+[32m7 of 51 steps (14%) done[0m
+[33mExecute 1 jobs...[0m
+
+[32m[Tue Feb 10 02:03:31 2026]
+rule megahit_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S9/short_reads.fastq.gz
+    output: assemblies/S9/assembly.megahit/final.contigs.fa
+    jobid: 33
+    reason: Missing output files: assemblies/S9/assembly.megahit/final.contigs.fa
+    wildcards: output_dir=assemblies, sample=S9
+    threads: 16
+    resources: mem_mb=360000, mem_mib=343323, disk_mb=66214, disk_mib=63147, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 33 has been submitted with SLURM jobid 1794520 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_megahit_assembly/assemblies_S9/1794520.log).[0m
+[33mSelect jobs to execute...[0m
+[31m[Tue Feb 10 11:16:37 2026]
+Error in rule metaspades_assembly:
+    message: SLURM-job '1794439' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 38
+    input: /storage/biology/projects/miller-lowry/beitner/data/S2/short_reads.fastq.gz
+    output: assemblies/S2/assembly.metaspades/assembly.fasta
+    log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S2/1794439.log (check log file(s) for error details)
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S2/short_reads.fastq.gz -o assemblies/S2/assembly.metaspades -t 16
+        (command exited with non-zero exit code)
+    external_jobid: 1794439[0m
+[32m[Tue Feb 10 12:16:42 2026]
+Finished jobid: 33 (Rule: megahit_assembly)[0m
+[32m8 of 51 steps (16%) done[0m
+[31m[Tue Feb 10 18:56:44 2026]
+Error in rule metaspades_assembly:
+    message: SLURM-job '1794440' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 47
+    input: /storage/biology/projects/miller-lowry/beitner/data/S11/short_reads.fastq.gz
+    output: assemblies/S11/assembly.metaspades/assembly.fasta
+    log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S11/1794440.log (check log file(s) for error details)
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S11/short_reads.fastq.gz -o assemblies/S11/assembly.metaspades -t 16
+        (command exited with non-zero exit code)
+    external_jobid: 1794440[0m
+[31m[Wed Feb 11 01:06:05 2026]
+Error in rule metaspades_assembly:
+    message: SLURM-job '1794509' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 48
+    input: /storage/biology/projects/miller-lowry/beitner/data/S12/short_reads.fastq.gz
+    output: assemblies/S12/assembly.metaspades/assembly.fasta
+    log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S12/1794509.log (check log file(s) for error details)
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S12/short_reads.fastq.gz -o assemblies/S12/assembly.metaspades -t 16
+        (command exited with non-zero exit code)
+    external_jobid: 1794509[0m
+^[[A^[[A^[[A^[[A^[[A^[[A^[[A^[[B^C[33mTerminating processes on user request, this might take some time.[0m
+^[[A[33mComplete log(s): /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/log/2026-02-09T134441.444669.snakemake.log[0m
+[31mWorkflowError:
+At least one job did not complete successfully.[0m
+[33mCleaning up log files older than 10 day(s)[0m
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ snakemake --profile slurm_profile[K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ snakemake --profile slurm_profile[18Pwhich snakemake[18@snakemake --profile slurm_profile[Kmax_mem.sh 
+Usage: /shared/bin/max_mem.sh <node-name>
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ max_mem.sh l math-alderaan
+Node: math-alderaan Wed Feb 11 10:13:50 MST 2026
+RealMemory (from Slurm):  MB
+OS and cache overhead: ~0 MB
+Safety margin: 40960 MB
+>>> Maximum realistic --mem if you took the whole node: -40960 MB
+
+Checking current job reservations on node math-alderaan...
+squeue: error: Invalid node name math-alderaan
+
+Total reserved by jobs on math-alderaan: 0 MB
+>>> Maximum realistic --mem you can request now and still fit: -40960 MB
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ sinfo--long[1@ 
+Wed Feb 11 10:14:32 2026
+PARTITION               AVAIL  TIMELIMIT   JOB_SIZE ROOT OVERSUBS     GROUPS  NODES       STATE NODELIST
+math-alderaan              up 7-00:00:00 1-infinite   no       NO        all      3       mixed math-alderaan-c[01-02,32]
+math-alderaan              up 7-00:00:00 1-infinite   no       NO        all     27        idle math-alderaan-c[03-06,08-29,31]
+math-alderaan-short        up 1-00:00:00 1-infinite   no       NO        all      3       mixed math-alderaan-c[01-02,32]
+math-alderaan-short        up 1-00:00:00 1-infinite   no       NO        all     27        idle math-alderaan-c[03-06,08-29,31]
+jupyter                    up 7-00:00:00 1-infinite   no       NO        all      3       mixed math-alderaan-c[01-02,32]
+jupyter                    up 7-00:00:00 1-infinite   no       NO        all     27        idle math-alderaan-c[03-06,08-29,31]
+math-alderaan-gpu          up 7-00:00:00 1-infinite   no       NO        all      2       mixed math-alderaan-h[01-02]
+math-alderaan-gpu-short    up 1-00:00:00 1-infinite   no       NO        all      2       mixed math-alderaan-h[01-02]
+math-alderaan-gpu-quick    up    2:00:00 1-infinite   no       NO        all      2       mixed math-alderaan-h[01-02]
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ sinfo --longmax_mem.sh math-alderaan-c01
+Node: math-alderaan-c01 Wed Feb 11 10:15:06 MST 2026
+RealMemory (from Slurm): 515000 MB
+OS and cache overhead: ~5722 MB
+Safety margin: 40960 MB
+>>> Maximum realistic --mem if you took the whole node: 468318 MB
+
+Checking current job reservations on node math-alderaan-c01...
+Job 1794546 reserves 65536 MB
+Job 1794521 reserves 4096 MB
+Job 1794416 reserves 4096 MB
+Job 1794553 reserves 204800 MB
+Job 1794524 reserves 32768 MB
+Job 1794523 reserves 32768 MB
+
+Total reserved by jobs on math-alderaan-c01: 344064 MB
+>>> Maximum realistic --mem you can request now and still fit: 124254 MB
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ max_mem.sh math-alderaan-c011   gpu   h-1  01
+Node: math-alderaan-h01 Wed Feb 11 10:16:55 MST 2026
+RealMemory (from Slurm): 2048000 MB
+OS and cache overhead: ~22755 MB
+Safety margin: 40960 MB
+>>> Maximum realistic --mem if you took the whole node: 1984285 MB
+
+Checking current job reservations on node math-alderaan-h01...
+Job 1794554 reserves 1228800 MB
+Job 1794551 reserves 65536 MB
+Job 1794550 reserves 65536 MB
+
+Total reserved by jobs on math-alderaan-h01: 1359872 MB
+>>> Maximum realistic --mem you can request now and still fit: 624413 MB
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ sinfo -o "%20N %10m %10e"
+NODELIST             MEMORY     FREE_MEM  
+math-alderaan-c[01-0 515000+    173356-142
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ sinfo -o "%20N %10m %10e"10m %10e"[Ksinfo -n N all   l-  l-   -l   -l
+Wed Feb 11 10:18:11 2026
+NODELIST           NODES               PARTITION       STATE CPUS    S:C:T MEMORY TMP_DISK WEIGHT AVAIL_FE REASON              
+math-alderaan-c01      1     math-alderaan-short       mixed 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c01      1           math-alderaan       mixed 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c01      1                 jupyter       mixed 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c02      1     math-alderaan-short       mixed 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c02      1           math-alderaan       mixed 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c02      1                 jupyter       mixed 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c03      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c03      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c03      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c04      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c04      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c04      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c05      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c05      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c05      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c06      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c06      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c06      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c08      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c08      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c08      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c09      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c09      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c09      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c10      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c10      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c10      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c11      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c11      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c11      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c12      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c12      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c12      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c13      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c13      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c13      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c14      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c14      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c14      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c15      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c15      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c15      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c16      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c16      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c16      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c17      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c17      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c17      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c18      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c18      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c18      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c19      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c19      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c19      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c20      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c20      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c20      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c21      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c21      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c21      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c22      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c22      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c22      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c23      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c23      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c23      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c24      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c24      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c24      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c25      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c25      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c25      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c26      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c26      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c26      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c27      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c27      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c27      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c28      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c28      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c28      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c29      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c29      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c29      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c31      1     math-alderaan-short        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c31      1                 jupyter        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c31      1           math-alderaan        idle 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c32      1     math-alderaan-short       mixed 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c32      1                 jupyter       mixed 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-c32      1           math-alderaan       mixed 64     2:32:1 515000        0      1   (null) none                
+math-alderaan-h01      1       math-alderaan-gpu       mixed 64     2:32:1 204800        0      1   (null) none                
+math-alderaan-h01      1 math-alderaan-gpu-short       mixed 64     2:32:1 204800        0      1   (null) none                
+math-alderaan-h01      1 math-alderaan-gpu-quick       mixed 64     2:32:1 204800        0      1   (null) none                
+math-alderaan-h02      1       math-alderaan-gpu       mixed 64     2:32:1 204800        0      1   (null) none                
+math-alderaan-h02      1 math-alderaan-gpu-short       mixed 64     2:32:1 204800        0      1   (null) none                
+math-alderaan-h02      1 math-alderaan-gpu-quick       mixed 64     2:32:1 204800        0      1   (null) none                
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ sinfo -N -lo "%20N %10m %10e"N -l[K[K[K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ sinfo -N -l[K[K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ ls
+README.md  Snakefile  [0m[01;34massemblies[0m  [01;34mbenchmarks[0m  build_containers.sh  config.yaml  [01;34mcontainers[0m  [01;34mdata[0m  [01;34mlogs[0m  [01;34mmodules[0m  [01;34mslurm_profile[0m  snakemake_run.log  [01;34mtrimmed_reads[0m
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ snakemake --profile slurm_profile/ 
+Using profile slurm_profile for setting default command line arguments.
+[33mSupport for alternative conda frontends has been deprecated in favor of simpler support and code base. This should not cause issues since current conda releases rely on fast solving via libmamba. Ignoring the alternative conda frontend setting (mamba).[0m
+============================================================
+PRODUCTION MODE - Running all 12 samples
+Long-read samples: ['S1', 'S2', 'S5']
+Short-read only: ['S3', 'S4', 'S6', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12']
+============================================================
+[33mhost: math-alderaan.ucdenver.pvt[0m
+[33mBuilding DAG of jobs...[0m
+[33mSLURM run ID: 2a2f041e-2b68-4d69-99e6-513bb04fe581[0m
+[33mUsing shell: /usr/bin/bash[0m
+[32mProvided remote nodes: 5[0m
+[33mSingularity containers: ignored[0m
+[33mJob stats:
+job                           count
+--------------------------  -------
+adapter_trim_long_reads           2
+all                               1
+filter_long_reads                 3
+flye_assembly                     3
+megahit_assembly                  8
+metamdbg_assembly                 3
+metaspades_assembly              12
+metaspades_hybrid_assembly        3
+trim_illumina                     8
+total                            43
+[0m
+[33mSelect jobs to execute...[0m
+[33mFailed to solve scheduling problem with ILP solver, falling back to greedy scheduler. You likely have to fix your ILP solver installation. Error message: PULP_CBC_CMD: Not Available (check permissions on cbc)[0m
+[33mExecute 5 jobs...[0m
+
+[32m[Wed Feb 11 10:23:22 2026]
+rule megahit_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S5/short_reads.fastq.gz
+    output: assemblies/S5/assembly.megahit/final.contigs.fa
+    jobid: 29
+    reason: Missing output files: assemblies/S5/assembly.megahit/final.contigs.fa
+    wildcards: output_dir=assemblies, sample=S5
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=66160, disk_mib=63096, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 29 has been submitted with SLURM jobid 1794555 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_megahit_assembly/assemblies_S5/1794555.log).[0m
+
+[32m[Wed Feb 11 10:23:23 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S9/short_reads.fastq.gz
+    output: assemblies/S9/assembly.metaspades/assembly.fasta
+    jobid: 45
+    reason: Missing output files: assemblies/S9/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S9
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=66214, disk_mib=63147, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 45 has been submitted with SLURM jobid 1794556 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S9/1794556.log).[0m
+
+[32m[Wed Feb 11 10:23:23 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S2/short_reads.fastq.gz
+    output: assemblies/S2/assembly.metaspades/assembly.fasta
+    jobid: 38
+    reason: Missing output files: assemblies/S2/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S2
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=71273, disk_mib=67972, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 38 has been submitted with SLURM jobid 1794557 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S2/1794557.log).[0m
+
+[32m[Wed Feb 11 10:23:23 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S11/short_reads.fastq.gz
+    output: assemblies/S11/assembly.metaspades/assembly.fasta
+    jobid: 47
+    reason: Missing output files: assemblies/S11/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S11
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=79144, disk_mib=75478, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 47 has been submitted with SLURM jobid 1794558 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S11/1794558.log).[0m
+
+[32m[Wed Feb 11 10:23:23 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S12/short_reads.fastq.gz
+    output: assemblies/S12/assembly.metaspades/assembly.fasta
+    jobid: 48
+    reason: Missing output files: assemblies/S12/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S12
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=69652, disk_mib=66426, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 48 has been submitted with SLURM jobid 1794559 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S12/1794559.log).[0m
+[33mSelect jobs to execute...[0m
+^C[33mTerminating processes on user request, this might take some time.[0m
+[33mComplete log(s): /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/log/2026-02-11T102321.555555.snakemake.log[0m
+[31mWorkflowError:
+At least one job did not complete successfully.[0m
+[33mCleaning up log files older than 10 day(s)[0m
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ snakemake --unlock
+============================================================
+PRODUCTION MODE - Running all 12 samples
+Long-read samples: ['S1', 'S2', 'S5']
+Short-read only: ['S3', 'S4', 'S6', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12']
+============================================================
+[33mBuilding DAG of jobs...[0m
+[33mUnlocked working directory.[0m
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ ls data/
+S1_long_reads_temp.fastq     [0m[01;31mS5_long_reads_filtered.fastq.gz[0m  [01;31mS5_long_reads_porechop.fastq.gz[0m  [01;31mS5_long_reads_temp.fastq.gz[0m
+[01;31mS1_long_reads_temp.fastq.gz[0m  S5_long_reads_porechop.fastq     S5_long_reads_temp.fastq
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ rm m -rf data/
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ rm -rf data/[4Pls data/snakemake --unlockprofile slurm_profilels[Ksinfo -N -lls[Ksnakemake --profile slurm_profileunlock[K[10Pls data/[4@rm -rf data/         f trimmed_reads/*[14Pls data/snakemake --unlockprofile slurm_profile
+Using profile slurm_profile for setting default command line arguments.
+[33mSupport for alternative conda frontends has been deprecated in favor of simpler support and code base. This should not cause issues since current conda releases rely on fast solving via libmamba. Ignoring the alternative conda frontend setting (mamba).[0m
+============================================================
+PRODUCTION MODE - Running all 12 samples
+Long-read samples: ['S1', 'S2', 'S5']
+Short-read only: ['S3', 'S4', 'S6', 'S7', 'S8', 'S9', 'S10', 'S11', 'S12']
+============================================================
+[33mhost: math-alderaan.ucdenver.pvt[0m
+[33mBuilding DAG of jobs...[0m
+[33mSLURM run ID: 858d5d6f-3498-4fbb-8be7-7fafefb27ba1[0m
+[33mUsing shell: /usr/bin/bash[0m
+[32mProvided remote nodes: 13[0m
+[33mSingularity containers: ignored[0m
+[33mJob stats:
+job                           count
+--------------------------  -------
+adapter_trim_long_reads           3
+all                               1
+filter_long_reads                 3
+flye_assembly                     3
+megahit_assembly                  8
+metamdbg_assembly                 3
+metaspades_assembly              12
+metaspades_hybrid_assembly        3
+trim_illumina                     8
+total                            44
+[0m
+[33mSelect jobs to execute...[0m
+[33mFailed to solve scheduling problem with ILP solver, falling back to greedy scheduler. You likely have to fix your ILP solver installation. Error message: PULP_CBC_CMD: Not Available (check permissions on cbc)[0m
+[33mExecute 13 jobs...[0m
+
+[32m[Wed Feb 11 10:44:59 2026]
+rule megahit_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S4/short_reads.fastq.gz
+    output: assemblies/S4/assembly.megahit/final.contigs.fa
+    jobid: 28
+    reason: Missing output files: assemblies/S4/assembly.megahit/final.contigs.fa
+    wildcards: output_dir=assemblies, sample=S4
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=58680, disk_mib=55962, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 28 has been submitted with SLURM jobid 1794560 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_megahit_assembly/assemblies_S4/1794560.log).[0m
+
+[32m[Wed Feb 11 10:45:02 2026]
+rule megahit_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S5/short_reads.fastq.gz
+    output: assemblies/S5/assembly.megahit/final.contigs.fa
+    jobid: 29
+    reason: Missing output files: assemblies/S5/assembly.megahit/final.contigs.fa
+    wildcards: output_dir=assemblies, sample=S5
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=66160, disk_mib=63096, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 29 has been submitted with SLURM jobid 1794561 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_megahit_assembly/assemblies_S5/1794561.log).[0m
+
+[32m[Wed Feb 11 10:45:02 2026]
+rule trim_illumina:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S5/short_reads.fastq.gz
+    output: trimmed_reads/S5_interleaved_trimmed.fastq.gz
+    log: logs/trim_illumina_S5.log
+    jobid: 5
+    reason: Missing output files: trimmed_reads/S5_interleaved_trimmed.fastq.gz
+    wildcards: sample=S5
+    threads: 16
+    resources: mem_mb=360000, mem_mib=343323, disk_mb=66160, disk_mib=63096, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 5 has been submitted with SLURM jobid 1794562 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_trim_illumina/S5/1794562.log).[0m
+
+[32m[Wed Feb 11 10:45:02 2026]
+rule adapter_trim_long_reads:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S1/long_reads.bam
+    output: data/S1_long_reads_porechop.fastq
+    log: logs/adapter_trim_long_reads_S1.log
+    jobid: 14
+    benchmark: benchmarks/adapter_trim_long_reads_S1.txt
+    reason: Missing output files: data/S1_long_reads_porechop.fastq
+    wildcards: sample=S1
+    threads: 16
+    resources: mem_mb=360000, mem_mib=343323, disk_mb=63734, disk_mib=60782, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 14 has been submitted with SLURM jobid 1794563 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_adapter_trim_long_reads/S1/1794563.log).[0m
+
+[32m[Wed Feb 11 10:45:02 2026]
+rule trim_illumina:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S4/short_reads.fastq.gz
+    output: trimmed_reads/S4_interleaved_trimmed.fastq.gz
+    log: logs/trim_illumina_S4.log
+    jobid: 4
+    reason: Missing output files: trimmed_reads/S4_interleaved_trimmed.fastq.gz
+    wildcards: sample=S4
+    threads: 16
+    resources: mem_mb=360000, mem_mib=343323, disk_mb=58680, disk_mib=55962, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 4 has been submitted with SLURM jobid 1794564 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_trim_illumina/S4/1794564.log).[0m
+
+[32m[Wed Feb 11 10:45:02 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S9/short_reads.fastq.gz
+    output: assemblies/S9/assembly.metaspades/assembly.fasta
+    jobid: 45
+    reason: Missing output files: assemblies/S9/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S9
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=66214, disk_mib=63147, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 45 has been submitted with SLURM jobid 1794565 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S9/1794565.log).[0m
+
+[32m[Wed Feb 11 10:45:02 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S2/short_reads.fastq.gz
+    output: assemblies/S2/assembly.metaspades/assembly.fasta
+    jobid: 38
+    reason: Missing output files: assemblies/S2/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S2
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=71273, disk_mib=67972, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 38 has been submitted with SLURM jobid 1794566 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S2/1794566.log).[0m
+
+[32m[Wed Feb 11 10:45:02 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S10/short_reads.fastq.gz
+    output: assemblies/S10/assembly.metaspades/assembly.fasta
+    jobid: 46
+    reason: Missing output files: assemblies/S10/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S10
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=65241, disk_mib=62219, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 46 has been submitted with SLURM jobid 1794567 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S10/1794567.log).[0m
+
+[32m[Wed Feb 11 10:45:02 2026]
+rule trim_illumina:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S10/short_reads.fastq.gz
+    output: trimmed_reads/S10_interleaved_trimmed.fastq.gz
+    log: logs/trim_illumina_S10.log
+    jobid: 10
+    reason: Missing output files: trimmed_reads/S10_interleaved_trimmed.fastq.gz
+    wildcards: sample=S10
+    threads: 16
+    resources: mem_mb=360000, mem_mib=343323, disk_mb=65241, disk_mib=62219, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 10 has been submitted with SLURM jobid 1794568 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_trim_illumina/S10/1794568.log).[0m
+
+[32m[Wed Feb 11 10:45:02 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S11/short_reads.fastq.gz
+    output: assemblies/S11/assembly.metaspades/assembly.fasta
+    jobid: 47
+    reason: Missing output files: assemblies/S11/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S11
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=79144, disk_mib=75478, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 47 has been submitted with SLURM jobid 1794569 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S11/1794569.log).[0m
+
+[32m[Wed Feb 11 10:45:02 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S12/short_reads.fastq.gz
+    output: assemblies/S12/assembly.metaspades/assembly.fasta
+    jobid: 48
+    reason: Missing output files: assemblies/S12/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S12
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=69652, disk_mib=66426, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 48 has been submitted with SLURM jobid 1794570 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S12/1794570.log).[0m
+
+[32m[Wed Feb 11 10:45:02 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S5/short_reads.fastq.gz
+    output: assemblies/S5/assembly.metaspades/assembly.fasta
+    jobid: 41
+    reason: Missing output files: assemblies/S5/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S5
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=66160, disk_mib=63096, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 41 has been submitted with SLURM jobid 1794571 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S5/1794571.log).[0m
+
+[32m[Wed Feb 11 10:45:02 2026]
+rule megahit_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S10/short_reads.fastq.gz
+    output: assemblies/S10/assembly.megahit/final.contigs.fa
+    jobid: 34
+    reason: Missing output files: assemblies/S10/assembly.megahit/final.contigs.fa
+    wildcards: output_dir=assemblies, sample=S10
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=65241, disk_mib=62219, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 34 has been submitted with SLURM jobid 1794572 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_megahit_assembly/assemblies_S10/1794572.log).[0m
+[33mSelect jobs to execute...[0m
+[32m[Wed Feb 11 11:11:06 2026]
+Finished jobid: 4 (Rule: trim_illumina)[0m
+[32m1 of 44 steps (2%) done[0m
+[33mExecute 1 jobs...[0m
+
+[32m[Wed Feb 11 11:11:06 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S4/short_reads.fastq.gz
+    output: assemblies/S4/assembly.metaspades/assembly.fasta
+    jobid: 40
+    reason: Missing output files: assemblies/S4/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S4
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=58680, disk_mib=55962, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 40 has been submitted with SLURM jobid 1794574 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S4/1794574.log).[0m
+[32m[Wed Feb 11 11:11:07 2026]
+Finished jobid: 10 (Rule: trim_illumina)[0m
+[32m2 of 44 steps (5%) done[0m
+[33mSelect jobs to execute...[0m
+[33mExecute 1 jobs...[0m
+
+[32m[Wed Feb 11 11:11:07 2026]
+rule trim_illumina:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S8/short_reads.fastq.gz
+    output: trimmed_reads/S8_interleaved_trimmed.fastq.gz
+    log: logs/trim_illumina_S8.log
+    jobid: 8
+    reason: Missing output files: trimmed_reads/S8_interleaved_trimmed.fastq.gz
+    wildcards: sample=S8
+    threads: 16
+    resources: mem_mb=360000, mem_mib=343323, disk_mb=57762, disk_mib=55087, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 8 has been submitted with SLURM jobid 1794575 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_trim_illumina/S8/1794575.log).[0m
+[33mSelect jobs to execute...[0m
+[32m[Wed Feb 11 11:13:36 2026]
+Finished jobid: 5 (Rule: trim_illumina)[0m
+[32m3 of 44 steps (7%) done[0m
+[33mExecute 1 jobs...[0m
+
+[32m[Wed Feb 11 11:13:36 2026]
+rule metaspades_assembly:
+    input: /storage/biology/projects/miller-lowry/beitner/data/S8/short_reads.fastq.gz
+    output: assemblies/S8/assembly.metaspades/assembly.fasta
+    jobid: 44
+    reason: Missing output files: assemblies/S8/assembly.metaspades/assembly.fasta
+    wildcards: output_dir=assemblies, sample=S8
+    threads: 16
+    resources: mem_mb=512000, mem_mib=488282, disk_mb=57762, disk_mib=55087, tmpdir=<TBD>, slurm_partition=math-alderaan, runtime=2880, threads=16, slurm_account=biology-miller-annotation, slurm_logdir=/storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs, slurm_mail_type=END,FAIL, slurm_mail_user=mike.beitner@ucdenver.edu[0m
+[33mJob 44 has been submitted with SLURM jobid 1794576 (log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S8/1794576.log).[0m
+[33mSelect jobs to execute...[0m
+[31m[Wed Feb 11 11:18:37 2026]
+Error in rule adapter_trim_long_reads:
+    message: SLURM-job '1794563' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 14
+    input: /storage/biology/projects/miller-lowry/beitner/data/S1/long_reads.bam
+    output: data/S1_long_reads_porechop.fastq
+    log: logs/adapter_trim_long_reads_S1.log, /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_adapter_trim_long_reads/S1/1794563.log (check log file(s) for error details)
+    shell:
+        
+        set -euo pipefail;
+
+        TEMP_FASTQ="data/S1_long_reads_temp.fastq.gz"
+        TEMP_FASTQ_UNCOMPRESSED="data/S1_long_reads_temp.fastq"
+        TEMP_FASTQ_PORECHOP="data/S1_long_reads_porechop.fastq"
+        WORKDIR=$(pwd)
+
+        # 1. Convert BAM to temporary FASTQ
+        echo "Converting BAM to temporary FASTQ..." >> logs/adapter_trim_long_reads_S1.log
+        singularity exec -B "$WORKDIR:$WORKDIR" -W "$WORKDIR" containers/qc_tools_miniconda.sif reformat.sh in=/storage/biology/projects/miller-lowry/beitner/data/S1/long_reads.bam out=$TEMP_FASTQ 2>> logs/adapter_trim_long_reads_S1.log
+
+        # 2. Decompress for Porechop
+        echo "Decompressing FASTQ for Porechop..." >> logs/adapter_trim_long_reads_S1.log
+        gunzip -c "$TEMP_FASTQ" > "$TEMP_FASTQ_UNCOMPRESSED" 2>> logs/adapter_trim_long_reads_S1.log
+
+        # 3. Adapter trimming with Porechop
+        echo "Running Porechop adapter trimming..." >> logs/adapter_trim_long_reads_S1.log
+        singularity exec -B "$WORKDIR:$WORKDIR" -W "$WORKDIR" containers/porechop_0.2.4--py39h2de1943_9.sif porechop             -i "$TEMP_FASTQ_UNCOMPRESSED"             -o "$TEMP_FASTQ_PORECHOP"             -t 8                          2>> logs/adapter_trim_long_reads_S1.log
+
+        # 4. Move output into place
+        mv "$TEMP_FASTQ_PORECHOP" "data/S1_long_reads_porechop.fastq"
+
+        # 5. Clean up
+        rm -f "$TEMP_FASTQ" "$TEMP_FASTQ_UNCOMPRESSED"
+        
+        (command exited with non-zero exit code)
+    external_jobid: 1794563[0m
+^[[A^[[B[32m[Wed Feb 11 11:44:12 2026]
+Finished jobid: 8 (Rule: trim_illumina)[0m
+[32m4 of 44 steps (9%) done[0m
+[32m[Wed Feb 11 20:54:18 2026]
+Finished jobid: 28 (Rule: megahit_assembly)[0m
+[32m5 of 44 steps (11%) done[0m
+^[[A^[[A^[[B                    [32m[Wed Feb 11 21:48:53 2026]
+Finished jobid: 34 (Rule: megahit_assembly)[0m
+[32m6 of 44 steps (14%) done[0m
+[32m[Wed Feb 11 21:57:04 2026]
+Finished jobid: 29 (Rule: megahit_assembly)[0m
+[32m7 of 44 steps (16%) done[0m
+[31m[Thu Feb 12 11:13:29 2026]
+Error in rule metaspades_assembly:
+    message: SLURM-job '1794566' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 38
+    input: /storage/biology/projects/miller-lowry/beitner/data/S2/short_reads.fastq.gz
+    output: assemblies/S2/assembly.metaspades/assembly.fasta
+    log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S2/1794566.log (check log file(s) for error details)
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S2/short_reads.fastq.gz -o assemblies/S2/assembly.metaspades -t 16
+        (command exited with non-zero exit code)
+    external_jobid: 1794566[0m
+[31m[Thu Feb 12 11:31:30 2026]
+Error in rule metaspades_assembly:
+    message: SLURM-job '1794576' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 44
+    input: /storage/biology/projects/miller-lowry/beitner/data/S8/short_reads.fastq.gz
+    output: assemblies/S8/assembly.metaspades/assembly.fasta
+    log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S8/1794576.log (check log file(s) for error details)
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S8/short_reads.fastq.gz -o assemblies/S8/assembly.metaspades -t 16
+        (command exited with non-zero exit code)
+    external_jobid: 1794576[0m
+[31m[Thu Feb 12 13:46:38 2026]
+Error in rule metaspades_assembly:
+    message: SLURM-job '1794567' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 46
+    input: /storage/biology/projects/miller-lowry/beitner/data/S10/short_reads.fastq.gz
+    output: assemblies/S10/assembly.metaspades/assembly.fasta
+    log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S10/1794567.log (check log file(s) for error details)
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S10/short_reads.fastq.gz -o assemblies/S10/assembly.metaspades -t 16
+        (command exited with non-zero exit code)
+    external_jobid: 1794567[0m
+[31m[Thu Feb 12 14:16:40 2026]
+Error in rule metaspades_assembly:
+    message: SLURM-job '1794571' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 41
+    input: /storage/biology/projects/miller-lowry/beitner/data/S5/short_reads.fastq.gz
+    output: assemblies/S5/assembly.metaspades/assembly.fasta
+    log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S5/1794571.log (check log file(s) for error details)
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S5/short_reads.fastq.gz -o assemblies/S5/assembly.metaspades -t 16
+        (command exited with non-zero exit code)
+    external_jobid: 1794571[0m
+[31m[Thu Feb 12 15:40:47 2026]
+Error in rule metaspades_assembly:
+    message: SLURM-job '1794570' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 48
+    input: /storage/biology/projects/miller-lowry/beitner/data/S12/short_reads.fastq.gz
+    output: assemblies/S12/assembly.metaspades/assembly.fasta
+    log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S12/1794570.log (check log file(s) for error details)
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S12/short_reads.fastq.gz -o assemblies/S12/assembly.metaspades -t 16
+        (command exited with non-zero exit code)
+    external_jobid: 1794570[0m
+[31m[Thu Feb 12 20:02:03 2026]
+Error in rule metaspades_assembly:
+    message: SLURM-job '1794569' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 47
+    input: /storage/biology/projects/miller-lowry/beitner/data/S11/short_reads.fastq.gz
+    output: assemblies/S11/assembly.metaspades/assembly.fasta
+    log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S11/1794569.log (check log file(s) for error details)
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S11/short_reads.fastq.gz -o assemblies/S11/assembly.metaspades -t 16
+        (command exited with non-zero exit code)
+    external_jobid: 1794569[0m
+[31m[Fri Feb 13 10:47:55 2026]
+Error in rule metaspades_assembly:
+    message: SLURM-job '1794565' failed, SLURM status is: 'TIMEOUT'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 45
+    input: /storage/biology/projects/miller-lowry/beitner/data/S9/short_reads.fastq.gz
+    output: assemblies/S9/assembly.metaspades/assembly.fasta
+    log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S9/1794565.log (check log file(s) for error details)
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S9/short_reads.fastq.gz -o assemblies/S9/assembly.metaspades -t 16
+        (command exited with non-zero exit code)
+    external_jobid: 1794565[0m
+[31m[Fri Feb 13 11:11:56 2026]
+Error in rule metaspades_assembly:
+    message: SLURM-job '1794574' failed, SLURM status is: 'TIMEOUT'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 40
+    input: /storage/biology/projects/miller-lowry/beitner/data/S4/short_reads.fastq.gz
+    output: assemblies/S4/assembly.metaspades/assembly.fasta
+    log: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/slurm_logs/rule_metaspades_assembly/assemblies_S4/1794574.log (check log file(s) for error details)
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S4/short_reads.fastq.gz -o assemblies/S4/assembly.metaspades -t 16
+        (command exited with non-zero exit code)
+    external_jobid: 1794574[0m
+[33mShutting down, this might take some time.[0m
+[31mExiting because a job execution failed. Look below for error messages[0m
+[31m[Fri Feb 13 11:14:56 2026]
+Error in rule metaspades_assembly:
+    message: None
+    jobid: 44
+    input: /storage/biology/projects/miller-lowry/beitner/data/S8/short_reads.fastq.gz
+    output: assemblies/S8/assembly.metaspades/assembly.fasta
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S8/short_reads.fastq.gz -o assemblies/S8/assembly.metaspades -t 16
+        (command exited with non-zero exit code)[0m
+[31m[Fri Feb 13 11:14:56 2026]
+Error in rule metaspades_assembly:
+    message: None
+    jobid: 46
+    input: /storage/biology/projects/miller-lowry/beitner/data/S10/short_reads.fastq.gz
+    output: assemblies/S10/assembly.metaspades/assembly.fasta
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S10/short_reads.fastq.gz -o assemblies/S10/assembly.metaspades -t 16
+        (command exited with non-zero exit code)[0m
+[31m[Fri Feb 13 11:14:56 2026]
+Error in rule metaspades_assembly:
+    message: None
+    jobid: 48
+    input: /storage/biology/projects/miller-lowry/beitner/data/S12/short_reads.fastq.gz
+    output: assemblies/S12/assembly.metaspades/assembly.fasta
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S12/short_reads.fastq.gz -o assemblies/S12/assembly.metaspades -t 16
+        (command exited with non-zero exit code)[0m
+[31m[Fri Feb 13 11:14:56 2026]
+Error in rule adapter_trim_long_reads:
+    message: None
+    jobid: 14
+    input: /storage/biology/projects/miller-lowry/beitner/data/S1/long_reads.bam
+    output: data/S1_long_reads_porechop.fastq
+    log: logs/adapter_trim_long_reads_S1.log (check log file(s) for error details)
+    shell:
+        
+        set -euo pipefail;
+
+        TEMP_FASTQ="data/S1_long_reads_temp.fastq.gz"
+        TEMP_FASTQ_UNCOMPRESSED="data/S1_long_reads_temp.fastq"
+        TEMP_FASTQ_PORECHOP="data/S1_long_reads_porechop.fastq"
+        WORKDIR=$(pwd)
+
+        # 1. Convert BAM to temporary FASTQ
+        echo "Converting BAM to temporary FASTQ..." >> logs/adapter_trim_long_reads_S1.log
+        singularity exec -B "$WORKDIR:$WORKDIR" -W "$WORKDIR" containers/qc_tools_miniconda.sif reformat.sh in=/storage/biology/projects/miller-lowry/beitner/data/S1/long_reads.bam out=$TEMP_FASTQ 2>> logs/adapter_trim_long_reads_S1.log
+
+        # 2. Decompress for Porechop
+        echo "Decompressing FASTQ for Porechop..." >> logs/adapter_trim_long_reads_S1.log
+        gunzip -c "$TEMP_FASTQ" > "$TEMP_FASTQ_UNCOMPRESSED" 2>> logs/adapter_trim_long_reads_S1.log
+
+        # 3. Adapter trimming with Porechop
+        echo "Running Porechop adapter trimming..." >> logs/adapter_trim_long_reads_S1.log
+        singularity exec -B "$WORKDIR:$WORKDIR" -W "$WORKDIR" containers/porechop_0.2.4--py39h2de1943_9.sif porechop             -i "$TEMP_FASTQ_UNCOMPRESSED"             -o "$TEMP_FASTQ_PORECHOP"             -t 8                          2>> logs/adapter_trim_long_reads_S1.log
+
+        # 4. Move output into place
+        mv "$TEMP_FASTQ_PORECHOP" "data/S1_long_reads_porechop.fastq"
+
+        # 5. Clean up
+        rm -f "$TEMP_FASTQ" "$TEMP_FASTQ_UNCOMPRESSED"
+        
+        (command exited with non-zero exit code)[0m
+[31m[Fri Feb 13 11:14:56 2026]
+Error in rule metaspades_assembly:
+    message: None
+    jobid: 41
+    input: /storage/biology/projects/miller-lowry/beitner/data/S5/short_reads.fastq.gz
+    output: assemblies/S5/assembly.metaspades/assembly.fasta
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S5/short_reads.fastq.gz -o assemblies/S5/assembly.metaspades -t 16
+        (command exited with non-zero exit code)[0m
+[31m[Fri Feb 13 11:14:56 2026]
+Error in rule metaspades_assembly:
+    message: None
+    jobid: 45
+    input: /storage/biology/projects/miller-lowry/beitner/data/S9/short_reads.fastq.gz
+    output: assemblies/S9/assembly.metaspades/assembly.fasta
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S9/short_reads.fastq.gz -o assemblies/S9/assembly.metaspades -t 16
+        (command exited with non-zero exit code)[0m
+[31m[Fri Feb 13 11:14:56 2026]
+Error in rule metaspades_assembly:
+    message: None
+    jobid: 47
+    input: /storage/biology/projects/miller-lowry/beitner/data/S11/short_reads.fastq.gz
+    output: assemblies/S11/assembly.metaspades/assembly.fasta
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S11/short_reads.fastq.gz -o assemblies/S11/assembly.metaspades -t 16
+        (command exited with non-zero exit code)[0m
+[31m[Fri Feb 13 11:14:56 2026]
+Error in rule metaspades_assembly:
+    message: None
+    jobid: 38
+    input: /storage/biology/projects/miller-lowry/beitner/data/S2/short_reads.fastq.gz
+    output: assemblies/S2/assembly.metaspades/assembly.fasta
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S2/short_reads.fastq.gz -o assemblies/S2/assembly.metaspades -t 16
+        (command exited with non-zero exit code)[0m
+[31m[Fri Feb 13 11:14:56 2026]
+Error in rule metaspades_assembly:
+    message: None
+    jobid: 40
+    input: /storage/biology/projects/miller-lowry/beitner/data/S4/short_reads.fastq.gz
+    output: assemblies/S4/assembly.metaspades/assembly.fasta
+    shell:
+        singularity exec -B $PWD containers/assembler2.sif metaspades.py --only-assembler --pe1-12 /storage/biology/projects/miller-lowry/beitner/data/S4/short_reads.fastq.gz -o assemblies/S4/assembly.metaspades -t 16
+        (command exited with non-zero exit code)[0m
+[33mComplete log(s): /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/.snakemake/log/2026-02-11T104458.969696.snakemake.log[0m
+[31mWorkflowError:
+At least one job did not complete successfully.[0m
+[33mCleaning up log files older than 10 day(s)[0m
+(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ [K(snake_env) [beitnerm@math-alderaan metagenomic-multi-assembly-wrapper]$ logout

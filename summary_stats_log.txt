@@ -1,0 +1,1339 @@
+============================================================
+Timestamp: 2026-02-25 13:56:06
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S1/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1848	0.3170	0.3157	0.1825	0.0000	0.0000	0.0000	0.6327	0.0922
+
+Main genome scaffold total:         	1266453
+Main genome contig total:           	1266453
+Main genome scaffold sequence total:	1546.278 Mb
+Main genome contig sequence total:  	1546.278 Mb  	0.000% gap
+Main genome scaffold N/L50:         	92814/2.325 Kbp
+Main genome contig N/L50:           	92814/2.325 Kbp
+Main genome scaffold N/L90:         	833507/437
+Main genome contig N/L90:           	833507/437
+Max scaffold length:                	878.629 Kbp
+Max contig length:                  	878.629 Kbp
+Number of scaffolds > 50 KB:        	1927
+% main genome in scaffolds > 50 KB: 	12.34%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,266,453	     1,266,453	 1,546,278,166	 1,546,278,166	 100.00%
+    100 	     1,266,453	     1,266,453	 1,546,278,166	 1,546,278,166	 100.00%
+    250 	     1,256,041	     1,256,041	 1,543,956,461	 1,543,956,461	 100.00%
+    500 	       701,026	       701,026	 1,329,902,500	 1,329,902,500	 100.00%
+  1 Kbp 	       277,239	       277,239	 1,041,088,398	 1,041,088,398	 100.00%
+2.5 Kbp 	        84,740	        84,740	   753,747,140	   753,747,140	 100.00%
+  5 Kbp 	        35,308	        35,308	   584,471,538	   584,471,538	 100.00%
+ 10 Kbp 	        15,029	        15,029	   445,317,701	   445,317,701	 100.00%
+ 25 Kbp 	         4,888	         4,888	   293,271,457	   293,271,457	 100.00%
+ 50 Kbp 	         1,927	         1,927	   190,775,383	   190,775,383	 100.00%
+100 Kbp 	           612	           612	   100,770,838	   100,770,838	 100.00%
+250 Kbp 	            65	            65	    21,926,313	    21,926,313	 100.00%
+500 Kbp 	             3	             3	     2,162,367	     2,162,367	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:56:15
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S10/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1850	0.3166	0.3155	0.1829	0.0000	0.0000	0.0000	0.6321	0.0960
+
+Main genome scaffold total:         	1544992
+Main genome contig total:           	1544992
+Main genome scaffold sequence total:	1931.663 Mb
+Main genome contig sequence total:  	1931.663 Mb  	0.000% gap
+Main genome scaffold N/L50:         	108250/2.469 Kbp
+Main genome contig N/L50:           	108250/2.469 Kbp
+Main genome scaffold N/L90:         	1004526/445
+Main genome contig N/L90:           	1004526/445
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2554
+% main genome in scaffolds > 50 KB: 	13.55%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,544,992	     1,544,992	 1,931,662,753	 1,931,662,753	 100.00%
+    100 	     1,544,992	     1,544,992	 1,931,662,753	 1,931,662,753	 100.00%
+    250 	     1,525,913	     1,525,913	 1,927,411,336	 1,927,411,336	 100.00%
+    500 	       874,590	       874,590	 1,677,522,232	 1,677,522,232	 100.00%
+  1 Kbp 	       343,054	       343,054	 1,315,075,978	 1,315,075,978	 100.00%
+2.5 Kbp 	       106,615	       106,615	   961,835,375	   961,835,375	 100.00%
+  5 Kbp 	        44,371	        44,371	   748,673,208	   748,673,208	 100.00%
+ 10 Kbp 	        18,607	        18,607	   572,074,179	   572,074,179	 100.00%
+ 25 Kbp 	         6,083	         6,083	   383,795,904	   383,795,904	 100.00%
+ 50 Kbp 	         2,554	         2,554	   261,810,114	   261,810,114	 100.00%
+100 Kbp 	           855	           855	   145,622,155	   145,622,155	 100.00%
+250 Kbp 	           106	           106	    35,755,843	    35,755,843	 100.00%
+500 Kbp 	             6	             6	     3,819,670	     3,819,670	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:56:26
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S11/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1775	0.3241	0.3228	0.1756	0.0000	0.0000	0.0000	0.6469	0.0844
+
+Main genome scaffold total:         	1524036
+Main genome contig total:           	1524036
+Main genome scaffold sequence total:	2038.620 Mb
+Main genome contig sequence total:  	2038.620 Mb  	0.000% gap
+Main genome scaffold N/L50:         	87431/3.017 Kbp
+Main genome contig N/L50:           	87431/3.017 Kbp
+Main genome scaffold N/L90:         	961408/460
+Main genome contig N/L90:           	961408/460
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2964
+% main genome in scaffolds > 50 KB: 	15.37%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,524,036	     1,524,036	 2,038,620,482	 2,038,620,482	 100.00%
+    100 	     1,524,036	     1,524,036	 2,038,620,482	 2,038,620,482	 100.00%
+    250 	     1,499,628	     1,499,628	 2,033,180,718	 2,033,180,718	 100.00%
+    500 	       872,962	       872,962	 1,793,164,693	 1,793,164,693	 100.00%
+  1 Kbp 	       347,189	       347,189	 1,433,775,419	 1,433,775,419	 100.00%
+2.5 Kbp 	       109,330	       109,330	 1,079,427,710	 1,079,427,710	 100.00%
+  5 Kbp 	        48,638	        48,638	   871,002,810	   871,002,810	 100.00%
+ 10 Kbp 	        22,088	        22,088	   687,522,546	   687,522,546	 100.00%
+ 25 Kbp 	         7,316	         7,316	   463,703,119	   463,703,119	 100.00%
+ 50 Kbp 	         2,964	         2,964	   313,431,352	   313,431,352	 100.00%
+100 Kbp 	         1,058	         1,058	   182,567,373	   182,567,373	 100.00%
+250 Kbp 	           142	           142	    48,646,158	    48,646,158	 100.00%
+500 Kbp 	             9	             9	     5,775,242	     5,775,242	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:56:40
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S2/assembly.flye/assembly.fasta
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1896	0.3099	0.3108	0.1897	0.0000	0.0000	0.0000	0.6207	0.0914
+
+Main genome scaffold total:         	14046
+Main genome contig total:           	14046
+Main genome scaffold sequence total:	157.157 Mb
+Main genome contig sequence total:  	157.157 Mb  	0.000% gap
+Main genome scaffold N/L50:         	2450/16.378 Kbp
+Main genome contig N/L50:           	2450/16.378 Kbp
+Main genome scaffold N/L90:         	9065/5.202 Kbp
+Main genome contig N/L90:           	9065/5.202 Kbp
+Max scaffold length:                	184.697 Kbp
+Max contig length:                  	184.697 Kbp
+Number of scaffolds > 50 KB:        	310
+% main genome in scaffolds > 50 KB: 	14.09%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	        14,046	        14,046	   157,157,318	   157,157,318	 100.00%
+    250 	        14,046	        14,046	   157,157,318	   157,157,318	 100.00%
+    500 	        14,040	        14,040	   157,154,593	   157,154,593	 100.00%
+  1 Kbp 	        13,904	        13,904	   157,057,624	   157,057,624	 100.00%
+2.5 Kbp 	        12,501	        12,501	   154,337,709	   154,337,709	 100.00%
+  5 Kbp 	         9,286	         9,286	   142,571,473	   142,571,473	 100.00%
+ 10 Kbp 	         5,068	         5,068	   111,953,186	   111,953,186	 100.00%
+ 25 Kbp 	         1,300	         1,300	    55,927,837	    55,927,837	 100.00%
+ 50 Kbp 	           310	           310	    22,149,942	    22,149,942	 100.00%
+100 Kbp 	            35	            35	     4,273,558	     4,273,558	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:56:42
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S2/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1901	0.3117	0.3105	0.1877	0.0000	0.0000	0.0000	0.6222	0.1022
+
+Main genome scaffold total:         	1429379
+Main genome contig total:           	1429379
+Main genome scaffold sequence total:	1864.646 Mb
+Main genome contig sequence total:  	1864.646 Mb  	0.000% gap
+Main genome scaffold N/L50:         	91545/2.738 Kbp
+Main genome contig N/L50:           	91545/2.738 Kbp
+Main genome scaffold N/L90:         	919744/453
+Main genome contig N/L90:           	919744/453
+Max scaffold length:                	1.093 Mbp
+Max contig length:                  	1.093 Mbp
+Number of scaffolds > 50 KB:        	2624
+% main genome in scaffolds > 50 KB: 	15.72%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,429,379	     1,429,379	 1,864,645,586	 1,864,645,586	 100.00%
+    100 	     1,429,379	     1,429,379	 1,864,645,586	 1,864,645,586	 100.00%
+    250 	     1,418,161	     1,418,161	 1,862,142,490	 1,862,142,490	 100.00%
+    500 	       807,019	       807,019	 1,625,749,368	 1,625,749,368	 100.00%
+  1 Kbp 	       327,589	       327,589	 1,298,139,581	 1,298,139,581	 100.00%
+2.5 Kbp 	       102,549	       102,549	   961,136,680	   961,136,680	 100.00%
+  5 Kbp 	        42,725	        42,725	   755,808,694	   755,808,694	 100.00%
+ 10 Kbp 	        17,834	        17,834	   585,158,359	   585,158,359	 100.00%
+ 25 Kbp 	         5,918	         5,918	   405,988,362	   405,988,362	 100.00%
+ 50 Kbp 	         2,624	         2,624	   293,200,299	   293,200,299	 100.00%
+100 Kbp 	           991	           991	   180,837,588	   180,837,588	 100.00%
+250 Kbp 	           146	           146	    55,396,952	    55,396,952	 100.00%
+500 Kbp 	            23	            23	    14,992,667	    14,992,667	 100.00%
+  1 Mbp 	             1	             1	     1,093,351	     1,093,351	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:56:55
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S2/assembly.metamdbg/contigs.fasta
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1965	0.3036	0.3032	0.1967	0.0000	0.0000	0.0000	0.6068	0.0908
+
+Main genome scaffold total:         	9033
+Main genome contig total:           	9033
+Main genome scaffold sequence total:	137.119 Mb
+Main genome contig sequence total:  	137.119 Mb  	0.000% gap
+Main genome scaffold N/L50:         	1413/19.745 Kbp
+Main genome contig N/L50:           	1413/19.745 Kbp
+Main genome scaffold N/L90:         	6195/7.574 Kbp
+Main genome contig N/L90:           	6195/7.574 Kbp
+Max scaffold length:                	3.767 Mbp
+Max contig length:                  	3.767 Mbp
+Number of scaffolds > 50 KB:        	281
+% main genome in scaffolds > 50 KB: 	26.19%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	         9,033	         9,033	   137,118,508	   137,118,508	 100.00%
+  1 Kbp 	         9,033	         9,033	   137,118,508	   137,118,508	 100.00%
+2.5 Kbp 	         9,033	         9,033	   137,118,508	   137,118,508	 100.00%
+  5 Kbp 	         7,449	         7,449	   131,289,135	   131,289,135	 100.00%
+ 10 Kbp 	         4,166	         4,166	   105,728,883	   105,728,883	 100.00%
+ 25 Kbp 	           935	           935	    57,991,249	    57,991,249	 100.00%
+ 50 Kbp 	           281	           281	    35,906,123	    35,906,123	 100.00%
+100 Kbp 	            88	            88	    22,994,361	    22,994,361	 100.00%
+250 Kbp 	            19	            19	    12,909,327	    12,909,327	 100.00%
+500 Kbp 	             8	             8	     9,065,453	     9,065,453	 100.00%
+  1 Mbp 	             2	             2	     4,894,516	     4,894,516	 100.00%
+2.5 Mbp 	             1	             1	     3,766,639	     3,766,639	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:56:57
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S2/assembly.metaspades_hybrid/assembly.fasta
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1897	0.3079	0.3095	0.1929	0.0000	0.0000	0.0000	0.6174	0.1208
+
+Main genome scaffold total:         	4058030
+Main genome contig total:           	4058030
+Main genome scaffold sequence total:	2638.478 Mb
+Main genome contig sequence total:  	2638.478 Mb  	0.000% gap
+Main genome scaffold N/L50:         	297136/1.105 Kbp
+Main genome contig N/L50:           	297136/1.105 Kbp
+Main genome scaffold N/L90:         	1996107/294
+Main genome contig N/L90:           	1996107/294
+Max scaffold length:                	5.064 Mbp
+Max contig length:                  	5.064 Mbp
+Number of scaffolds > 50 KB:        	2616
+% main genome in scaffolds > 50 KB: 	13.62%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     4,058,030	     4,058,030	 2,638,478,457	 2,638,478,457	 100.00%
+     50 	     4,058,030	     4,058,030	 2,638,478,457	 2,638,478,457	 100.00%
+    100 	     4,026,002	     4,026,002	 2,636,195,588	 2,636,195,588	 100.00%
+    250 	     2,753,045	     2,753,045	 2,350,625,501	 2,350,625,501	 100.00%
+    500 	       881,427	       881,427	 1,732,590,995	 1,732,590,995	 100.00%
+  1 Kbp 	       339,759	       339,759	 1,364,145,256	 1,364,145,256	 100.00%
+2.5 Kbp 	       101,084	       101,084	 1,008,699,718	 1,008,699,718	 100.00%
+  5 Kbp 	        41,341	        41,341	   804,303,214	   804,303,214	 100.00%
+ 10 Kbp 	        17,165	        17,165	   638,842,769	   638,842,769	 100.00%
+ 25 Kbp 	         5,794	         5,794	   469,423,250	   469,423,250	 100.00%
+ 50 Kbp 	         2,616	         2,616	   359,345,014	   359,345,014	 100.00%
+100 Kbp 	         1,125	         1,125	   256,491,445	   256,491,445	 100.00%
+250 Kbp 	           285	           285	   129,671,965	   129,671,965	 100.00%
+500 Kbp 	            57	            57	    53,147,503	    53,147,503	 100.00%
+  1 Mbp 	            14	            14	    22,422,399	    22,422,399	 100.00%
+2.5 Mbp 	             1	             1	     5,064,414	     5,064,414	 100.00%
+  5 Mbp 	             1	             1	     5,064,414	     5,064,414	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:57:13
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S3/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1806	0.3212	0.3198	0.1784	0.0000	0.0000	0.0000	0.6410	0.0863
+
+Main genome scaffold total:         	1222262
+Main genome contig total:           	1222262
+Main genome scaffold sequence total:	1560.107 Mb
+Main genome contig sequence total:  	1560.107 Mb  	0.000% gap
+Main genome scaffold N/L50:         	78422/2.714 Kbp
+Main genome contig N/L50:           	78422/2.714 Kbp
+Main genome scaffold N/L90:         	786817/445
+Main genome contig N/L90:           	786817/445
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2059
+% main genome in scaffolds > 50 KB: 	13.66%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,222,262	     1,222,262	 1,560,106,687	 1,560,106,687	 100.00%
+    100 	     1,222,262	     1,222,262	 1,560,106,687	 1,560,106,687	 100.00%
+    250 	     1,207,177	     1,207,177	 1,556,739,905	 1,556,739,905	 100.00%
+    500 	       684,965	       684,965	 1,356,673,143	 1,356,673,143	 100.00%
+  1 Kbp 	       268,993	       268,993	 1,073,405,969	 1,073,405,969	 100.00%
+2.5 Kbp 	        86,541	        86,541	   801,192,166	   801,192,166	 100.00%
+  5 Kbp 	        37,291	        37,291	   631,425,121	   631,425,121	 100.00%
+ 10 Kbp 	        15,993	        15,993	   485,146,859	   485,146,859	 100.00%
+ 25 Kbp 	         5,293	         5,293	   324,091,829	   324,091,829	 100.00%
+ 50 Kbp 	         2,060	         2,060	   213,188,098	   213,188,098	 100.00%
+100 Kbp 	           704	           704	   120,285,579	   120,285,579	 100.00%
+250 Kbp 	            91	            91	    31,834,009	    31,834,009	 100.00%
+500 Kbp 	             8	             8	     5,367,650	     5,367,650	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:57:24
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S4/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1759	0.3259	0.3245	0.1738	0.0000	0.0000	0.0000	0.6503	0.0822
+
+Main genome scaffold total:         	1441877
+Main genome contig total:           	1441877
+Main genome scaffold sequence total:	1726.316 Mb
+Main genome contig sequence total:  	1726.316 Mb  	0.000% gap
+Main genome scaffold N/L50:         	101088/2.301 Kbp
+Main genome contig N/L50:           	101088/2.301 Kbp
+Main genome scaffold N/L90:         	952470/428
+Main genome contig N/L90:           	952470/428
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2083
+% main genome in scaffolds > 50 KB: 	12.05%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,441,877	     1,441,877	 1,726,316,067	 1,726,316,067	 100.00%
+    100 	     1,441,877	     1,441,877	 1,726,316,067	 1,726,316,067	 100.00%
+    250 	     1,426,168	     1,426,168	 1,722,810,525	 1,722,810,525	 100.00%
+    500 	       784,319	       784,319	 1,476,791,471	 1,476,791,471	 100.00%
+  1 Kbp 	       297,303	       297,303	 1,145,473,546	 1,145,473,546	 100.00%
+2.5 Kbp 	        91,262	        91,262	   839,658,993	   839,658,993	 100.00%
+  5 Kbp 	        39,584	        39,584	   662,756,274	   662,756,274	 100.00%
+ 10 Kbp 	        17,694	        17,694	   512,067,611	   512,067,611	 100.00%
+ 25 Kbp 	         5,607	         5,607	   329,288,961	   329,288,961	 100.00%
+ 50 Kbp 	         2,083	         2,083	   207,968,837	   207,968,837	 100.00%
+100 Kbp 	           677	           677	   112,306,519	   112,306,519	 100.00%
+250 Kbp 	            66	            66	    23,676,423	    23,676,423	 100.00%
+500 Kbp 	             6	             6	     3,827,821	     3,827,821	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:57:36
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S5/assembly.flye/assembly.fasta
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1921	0.3076	0.3084	0.1920	0.0000	0.0000	0.0000	0.6159	0.0896
+
+Main genome scaffold total:         	7438
+Main genome contig total:           	7438
+Main genome scaffold sequence total:	89.315 Mb
+Main genome contig sequence total:  	89.315 Mb  	0.000% gap
+Main genome scaffold N/L50:         	1337/17.276 Kbp
+Main genome contig N/L50:           	1337/17.276 Kbp
+Main genome scaffold N/L90:         	4866/5.69 Kbp
+Main genome contig N/L90:           	4866/5.69 Kbp
+Max scaffold length:                	245.287 Kbp
+Max contig length:                  	245.287 Kbp
+Number of scaffolds > 50 KB:        	181
+% main genome in scaffolds > 50 KB: 	15.12%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	         7,438	         7,438	    89,315,419	    89,315,419	 100.00%
+    500 	         7,438	         7,438	    89,315,419	    89,315,419	 100.00%
+  1 Kbp 	         7,380	         7,380	    89,271,020	    89,271,020	 100.00%
+2.5 Kbp 	         6,804	         6,804	    88,115,954	    88,115,954	 100.00%
+  5 Kbp 	         5,253	         5,253	    82,463,870	    82,463,870	 100.00%
+ 10 Kbp 	         2,921	         2,921	    65,491,663	    65,491,663	 100.00%
+ 25 Kbp 	           721	           721	    32,089,547	    32,089,547	 100.00%
+ 50 Kbp 	           181	           181	    13,505,883	    13,505,883	 100.00%
+100 Kbp 	            24	            24	     3,274,473	     3,274,473	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:57:38
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S5/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1878	0.3140	0.3127	0.1854	0.0000	0.0000	0.0000	0.6268	0.0964
+
+Main genome scaffold total:         	1706746
+Main genome contig total:           	1706746
+Main genome scaffold sequence total:	2009.647 Mb
+Main genome contig sequence total:  	2009.647 Mb  	0.000% gap
+Main genome scaffold N/L50:         	134064/2.132 Kbp
+Main genome contig N/L50:           	134064/2.132 Kbp
+Main genome scaffold N/L90:         	1140129/431
+Main genome contig N/L90:           	1140129/431
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2350
+% main genome in scaffolds > 50 KB: 	11.81%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,706,746	     1,706,746	 2,009,647,367	 2,009,647,367	 100.00%
+    100 	     1,706,746	     1,706,746	 2,009,647,367	 2,009,647,367	 100.00%
+    250 	     1,691,509	     1,691,509	 2,006,248,122	 2,006,248,122	 100.00%
+    500 	       942,585	       942,585	 1,717,631,034	 1,717,631,034	 100.00%
+  1 Kbp 	       360,525	       360,525	 1,322,275,728	 1,322,275,728	 100.00%
+2.5 Kbp 	       108,989	       108,989	   947,105,007	   947,105,007	 100.00%
+  5 Kbp 	        44,406	        44,406	   726,068,255	   726,068,255	 100.00%
+ 10 Kbp 	        18,410	        18,410	   547,896,600	   547,896,600	 100.00%
+ 25 Kbp 	         5,899	         5,899	   359,403,156	   359,403,156	 100.00%
+ 50 Kbp 	         2,350	         2,350	   237,329,291	   237,329,291	 100.00%
+100 Kbp 	           766	           766	   128,668,126	   128,668,126	 100.00%
+250 Kbp 	            79	            79	    27,988,596	    27,988,596	 100.00%
+500 Kbp 	             5	             5	     3,547,051	     3,547,051	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:57:52
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S5/assembly.metaspades_hybrid/assembly.fasta
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1850	0.3126	0.3142	0.1882	0.0000	0.0000	0.0000	0.6268	0.1066
+
+Main genome scaffold total:         	5521376
+Main genome contig total:           	5521376
+Main genome scaffold sequence total:	3195.668 Mb
+Main genome contig sequence total:  	3195.668 Mb  	0.000% gap
+Main genome scaffold N/L50:         	573674/773
+Main genome contig N/L50:           	573674/773
+Main genome scaffold N/L90:         	1606035/401
+Main genome contig N/L90:           	1606035/401
+Max scaffold length:                	3.009 Mbp
+Max contig length:                  	3.009 Mbp
+Number of scaffolds > 50 KB:        	2634
+% main genome in scaffolds > 50 KB: 	9.66%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     5,521,376	     5,521,376	 3,195,668,207	 3,195,668,207	 100.00%
+     50 	     5,521,376	     5,521,376	 3,195,668,207	 3,195,668,207	 100.00%
+    100 	     5,486,898	     5,486,898	 3,193,203,550	 3,193,203,550	 100.00%
+    250 	     3,750,732	     3,750,732	 2,802,436,923	 2,802,436,923	 100.00%
+    500 	     1,121,954	     1,121,954	 1,932,745,072	 1,932,745,072	 100.00%
+  1 Kbp 	       392,230	       392,230	 1,439,892,602	 1,439,892,602	 100.00%
+2.5 Kbp 	       110,230	       110,230	 1,024,103,860	 1,024,103,860	 100.00%
+  5 Kbp 	        44,894	        44,894	   800,752,801	   800,752,801	 100.00%
+ 10 Kbp 	        18,642	        18,642	   620,663,815	   620,663,815	 100.00%
+ 25 Kbp 	         6,260	         6,260	   434,128,654	   434,128,654	 100.00%
+ 50 Kbp 	         2,634	         2,634	   308,841,410	   308,841,410	 100.00%
+100 Kbp 	         1,003	         1,003	   195,261,883	   195,261,883	 100.00%
+250 Kbp 	           167	           167	    70,547,503	    70,547,503	 100.00%
+500 Kbp 	            25	            25	    23,186,719	    23,186,719	 100.00%
+  1 Mbp 	             7	             7	    11,351,863	    11,351,863	 100.00%
+2.5 Mbp 	             1	             1	     3,009,451	     3,009,451	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:58:13
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S6/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1805	0.3212	0.3200	0.1784	0.0000	0.0000	0.0000	0.6412	0.0876
+
+Main genome scaffold total:         	1352738
+Main genome contig total:           	1352738
+Main genome scaffold sequence total:	1670.730 Mb
+Main genome contig sequence total:  	1670.730 Mb  	0.000% gap
+Main genome scaffold N/L50:         	95250/2.44 Kbp
+Main genome contig N/L50:           	95250/2.44 Kbp
+Main genome scaffold N/L90:         	883523/439
+Main genome contig N/L90:           	883523/439
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2158
+% main genome in scaffolds > 50 KB: 	13.08%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,352,738	     1,352,738	 1,670,730,453	 1,670,730,453	 100.00%
+    100 	     1,352,738	     1,352,738	 1,670,730,453	 1,670,730,453	 100.00%
+    250 	     1,336,314	     1,336,314	 1,667,071,992	 1,667,071,992	 100.00%
+    500 	       755,430	       755,430	 1,444,350,113	 1,444,350,113	 100.00%
+  1 Kbp 	       294,582	       294,582	 1,130,347,427	 1,130,347,427	 100.00%
+2.5 Kbp 	        92,450	        92,450	   828,455,465	   828,455,465	 100.00%
+  5 Kbp 	        38,482	        38,482	   643,198,693	   643,198,693	 100.00%
+ 10 Kbp 	        16,132	        16,132	   489,902,235	   489,902,235	 100.00%
+ 25 Kbp 	         5,264	         5,264	   326,532,545	   326,532,545	 100.00%
+ 50 Kbp 	         2,158	         2,158	   218,542,763	   218,542,763	 100.00%
+100 Kbp 	           695	           695	   118,562,620	   118,562,620	 100.00%
+250 Kbp 	            88	            88	    30,318,536	    30,318,536	 100.00%
+500 Kbp 	             6	             6	     4,054,258	     4,054,258	 100.00%
+  1 Mbp 	             1	             1	     1,010,816	     1,010,816	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:58:25
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S7/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1788	0.3229	0.3217	0.1766	0.0000	0.0000	0.0000	0.6446	0.0855
+
+Main genome scaffold total:         	1460611
+Main genome contig total:           	1460611
+Main genome scaffold sequence total:	1742.362 Mb
+Main genome contig sequence total:  	1742.362 Mb  	0.000% gap
+Main genome scaffold N/L50:         	105525/2.237 Kbp
+Main genome contig N/L50:           	105525/2.237 Kbp
+Main genome scaffold N/L90:         	965311/430
+Main genome contig N/L90:           	965311/430
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2274
+% main genome in scaffolds > 50 KB: 	12.92%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,460,611	     1,460,611	 1,742,361,706	 1,742,361,706	 100.00%
+    100 	     1,460,611	     1,460,611	 1,742,361,706	 1,742,361,706	 100.00%
+    250 	     1,442,248	     1,442,248	 1,738,267,542	 1,738,267,542	 100.00%
+    500 	       802,189	       802,189	 1,493,068,625	 1,493,068,625	 100.00%
+  1 Kbp 	       304,336	       304,336	 1,154,597,186	 1,154,597,186	 100.00%
+2.5 Kbp 	        91,452	        91,452	   837,957,352	   837,957,352	 100.00%
+  5 Kbp 	        38,119	        38,119	   655,322,442	   655,322,442	 100.00%
+ 10 Kbp 	        16,677	        16,677	   508,364,221	   508,364,221	 100.00%
+ 25 Kbp 	         5,669	         5,669	   342,175,358	   342,175,358	 100.00%
+ 50 Kbp 	         2,274	         2,274	   225,173,993	   225,173,993	 100.00%
+100 Kbp 	           692	           692	   116,249,207	   116,249,207	 100.00%
+250 Kbp 	            74	            74	    26,603,955	    26,603,955	 100.00%
+500 Kbp 	             8	             8	     5,417,075	     5,417,075	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:58:37
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S8/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1804	0.3213	0.3200	0.1783	0.0000	0.0000	0.0000	0.6413	0.0876
+
+Main genome scaffold total:         	1458942
+Main genome contig total:           	1458942
+Main genome scaffold sequence total:	1769.207 Mb
+Main genome contig sequence total:  	1769.207 Mb  	0.000% gap
+Main genome scaffold N/L50:         	111084/2.256 Kbp
+Main genome contig N/L50:           	111084/2.256 Kbp
+Main genome scaffold N/L90:         	964167/438
+Main genome contig N/L90:           	964167/438
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2172
+% main genome in scaffolds > 50 KB: 	12.15%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,458,942	     1,458,942	 1,769,206,711	 1,769,206,711	 100.00%
+    100 	     1,458,942	     1,458,942	 1,769,206,711	 1,769,206,711	 100.00%
+    250 	     1,444,656	     1,444,656	 1,766,023,538	 1,766,023,538	 100.00%
+    500 	       815,256	       815,256	 1,523,253,579	 1,523,253,579	 100.00%
+  1 Kbp 	       321,434	       321,434	 1,186,458,501	 1,186,458,501	 100.00%
+2.5 Kbp 	        97,134	        97,134	   851,554,218	   851,554,218	 100.00%
+  5 Kbp 	        39,264	        39,264	   653,545,893	   653,545,893	 100.00%
+ 10 Kbp 	        16,657	        16,657	   498,611,717	   498,611,717	 100.00%
+ 25 Kbp 	         5,505	         5,505	   330,555,098	   330,555,098	 100.00%
+ 50 Kbp 	         2,172	         2,172	   214,915,515	   214,915,515	 100.00%
+100 Kbp 	           679	           679	   113,932,359	   113,932,359	 100.00%
+250 Kbp 	            78	            78	    26,869,453	    26,869,453	 100.00%
+500 Kbp 	             4	             4	     2,884,516	     2,884,516	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 13:58:49
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S9/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1802	0.3215	0.3202	0.1782	0.0000	0.0000	0.0000	0.6417	0.0864
+
+Main genome scaffold total:         	1499047
+Main genome contig total:           	1499047
+Main genome scaffold sequence total:	1946.514 Mb
+Main genome contig sequence total:  	1946.514 Mb  	0.000% gap
+Main genome scaffold N/L50:         	101985/2.679 Kbp
+Main genome contig N/L50:           	101985/2.679 Kbp
+Main genome scaffold N/L90:         	961275/457
+Main genome contig N/L90:           	961275/457
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2434
+% main genome in scaffolds > 50 KB: 	12.60%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,499,047	     1,499,047	 1,946,513,769	 1,946,513,769	 100.00%
+    100 	     1,499,047	     1,499,047	 1,946,513,769	 1,946,513,769	 100.00%
+    250 	     1,479,625	     1,479,625	 1,942,182,521	 1,942,182,521	 100.00%
+    500 	       866,587	       866,587	 1,706,687,352	 1,706,687,352	 100.00%
+  1 Kbp 	       349,578	       349,578	 1,353,753,659	 1,353,753,659	 100.00%
+2.5 Kbp 	       111,028	       111,028	   996,683,051	   996,683,051	 100.00%
+  5 Kbp 	        47,311	        47,311	   777,715,804	   777,715,804	 100.00%
+ 10 Kbp 	        20,380	        20,380	   592,396,640	   592,396,640	 100.00%
+ 25 Kbp 	         6,419	         6,419	   382,007,784	   382,007,784	 100.00%
+ 50 Kbp 	         2,434	         2,434	   245,255,312	   245,255,312	 100.00%
+100 Kbp 	           761	           761	   131,020,721	   131,020,721	 100.00%
+250 Kbp 	            98	            98	    34,819,280	    34,819,280	 100.00%
+500 Kbp 	             6	             6	     4,275,854	     4,275,854	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:46:08
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S1/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1848	0.3170	0.3157	0.1825	0.0000	0.0000	0.0000	0.6327	0.0922
+
+Main genome scaffold total:         	1266453
+Main genome contig total:           	1266453
+Main genome scaffold sequence total:	1546.278 Mb
+Main genome contig sequence total:  	1546.278 Mb  	0.000% gap
+Main genome scaffold N/L50:         	92814/2.325 Kbp
+Main genome contig N/L50:           	92814/2.325 Kbp
+Main genome scaffold N/L90:         	833507/437
+Main genome contig N/L90:           	833507/437
+Max scaffold length:                	878.629 Kbp
+Max contig length:                  	878.629 Kbp
+Number of scaffolds > 50 KB:        	1927
+% main genome in scaffolds > 50 KB: 	12.34%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,266,453	     1,266,453	 1,546,278,166	 1,546,278,166	 100.00%
+    100 	     1,266,453	     1,266,453	 1,546,278,166	 1,546,278,166	 100.00%
+    250 	     1,256,041	     1,256,041	 1,543,956,461	 1,543,956,461	 100.00%
+    500 	       701,026	       701,026	 1,329,902,500	 1,329,902,500	 100.00%
+  1 Kbp 	       277,239	       277,239	 1,041,088,398	 1,041,088,398	 100.00%
+2.5 Kbp 	        84,740	        84,740	   753,747,140	   753,747,140	 100.00%
+  5 Kbp 	        35,308	        35,308	   584,471,538	   584,471,538	 100.00%
+ 10 Kbp 	        15,029	        15,029	   445,317,701	   445,317,701	 100.00%
+ 25 Kbp 	         4,888	         4,888	   293,271,457	   293,271,457	 100.00%
+ 50 Kbp 	         1,927	         1,927	   190,775,383	   190,775,383	 100.00%
+100 Kbp 	           612	           612	   100,770,838	   100,770,838	 100.00%
+250 Kbp 	            65	            65	    21,926,313	    21,926,313	 100.00%
+500 Kbp 	             3	             3	     2,162,367	     2,162,367	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:46:19
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S10/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1850	0.3166	0.3155	0.1829	0.0000	0.0000	0.0000	0.6321	0.0960
+
+Main genome scaffold total:         	1544992
+Main genome contig total:           	1544992
+Main genome scaffold sequence total:	1931.663 Mb
+Main genome contig sequence total:  	1931.663 Mb  	0.000% gap
+Main genome scaffold N/L50:         	108250/2.469 Kbp
+Main genome contig N/L50:           	108250/2.469 Kbp
+Main genome scaffold N/L90:         	1004526/445
+Main genome contig N/L90:           	1004526/445
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2554
+% main genome in scaffolds > 50 KB: 	13.55%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,544,992	     1,544,992	 1,931,662,753	 1,931,662,753	 100.00%
+    100 	     1,544,992	     1,544,992	 1,931,662,753	 1,931,662,753	 100.00%
+    250 	     1,525,913	     1,525,913	 1,927,411,336	 1,927,411,336	 100.00%
+    500 	       874,590	       874,590	 1,677,522,232	 1,677,522,232	 100.00%
+  1 Kbp 	       343,054	       343,054	 1,315,075,978	 1,315,075,978	 100.00%
+2.5 Kbp 	       106,615	       106,615	   961,835,375	   961,835,375	 100.00%
+  5 Kbp 	        44,371	        44,371	   748,673,208	   748,673,208	 100.00%
+ 10 Kbp 	        18,607	        18,607	   572,074,179	   572,074,179	 100.00%
+ 25 Kbp 	         6,083	         6,083	   383,795,904	   383,795,904	 100.00%
+ 50 Kbp 	         2,554	         2,554	   261,810,114	   261,810,114	 100.00%
+100 Kbp 	           855	           855	   145,622,155	   145,622,155	 100.00%
+250 Kbp 	           106	           106	    35,755,843	    35,755,843	 100.00%
+500 Kbp 	             6	             6	     3,819,670	     3,819,670	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:46:31
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S11/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1775	0.3241	0.3228	0.1756	0.0000	0.0000	0.0000	0.6469	0.0844
+
+Main genome scaffold total:         	1524036
+Main genome contig total:           	1524036
+Main genome scaffold sequence total:	2038.620 Mb
+Main genome contig sequence total:  	2038.620 Mb  	0.000% gap
+Main genome scaffold N/L50:         	87431/3.017 Kbp
+Main genome contig N/L50:           	87431/3.017 Kbp
+Main genome scaffold N/L90:         	961408/460
+Main genome contig N/L90:           	961408/460
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2964
+% main genome in scaffolds > 50 KB: 	15.37%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,524,036	     1,524,036	 2,038,620,482	 2,038,620,482	 100.00%
+    100 	     1,524,036	     1,524,036	 2,038,620,482	 2,038,620,482	 100.00%
+    250 	     1,499,628	     1,499,628	 2,033,180,718	 2,033,180,718	 100.00%
+    500 	       872,962	       872,962	 1,793,164,693	 1,793,164,693	 100.00%
+  1 Kbp 	       347,189	       347,189	 1,433,775,419	 1,433,775,419	 100.00%
+2.5 Kbp 	       109,330	       109,330	 1,079,427,710	 1,079,427,710	 100.00%
+  5 Kbp 	        48,638	        48,638	   871,002,810	   871,002,810	 100.00%
+ 10 Kbp 	        22,088	        22,088	   687,522,546	   687,522,546	 100.00%
+ 25 Kbp 	         7,316	         7,316	   463,703,119	   463,703,119	 100.00%
+ 50 Kbp 	         2,964	         2,964	   313,431,352	   313,431,352	 100.00%
+100 Kbp 	         1,058	         1,058	   182,567,373	   182,567,373	 100.00%
+250 Kbp 	           142	           142	    48,646,158	    48,646,158	 100.00%
+500 Kbp 	             9	             9	     5,775,242	     5,775,242	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:46:45
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S12/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1826	0.3190	0.3178	0.1806	0.0000	0.0000	0.0000	0.6367	0.0937
+
+Main genome scaffold total:         	1536181
+Main genome contig total:           	1536181
+Main genome scaffold sequence total:	1952.350 Mb
+Main genome contig sequence total:  	1952.350 Mb  	0.000% gap
+Main genome scaffold N/L50:         	104150/2.592 Kbp
+Main genome contig N/L50:           	104150/2.592 Kbp
+Main genome scaffold N/L90:         	991188/447
+Main genome contig N/L90:           	991188/447
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2658
+% main genome in scaffolds > 50 KB: 	13.84%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,536,181	     1,536,181	 1,952,349,615	 1,952,349,615	 100.00%
+    100 	     1,536,181	     1,536,181	 1,952,349,615	 1,952,349,615	 100.00%
+    250 	     1,516,094	     1,516,094	 1,947,869,138	 1,947,869,138	 100.00%
+    500 	       868,577	       868,577	 1,699,620,251	 1,699,620,251	 100.00%
+  1 Kbp 	       345,829	       345,829	 1,343,455,287	 1,343,455,287	 100.00%
+2.5 Kbp 	       109,167	       109,167	   988,971,940	   988,971,940	 100.00%
+  5 Kbp 	        45,167	        45,167	   769,485,687	   769,485,687	 100.00%
+ 10 Kbp 	        19,035	        19,035	   590,333,882	   590,333,882	 100.00%
+ 25 Kbp 	         6,408	         6,408	   400,466,204	   400,466,204	 100.00%
+ 50 Kbp 	         2,658	         2,658	   270,110,354	   270,110,354	 100.00%
+100 Kbp 	           868	           868	   147,797,875	   147,797,875	 100.00%
+250 Kbp 	           108	           108	    38,196,974	    38,196,974	 100.00%
+500 Kbp 	             9	             9	     5,458,603	     5,458,603	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:46:58
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S2/assembly.flye/assembly.fasta
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1896	0.3099	0.3108	0.1897	0.0000	0.0000	0.0000	0.6207	0.0914
+
+Main genome scaffold total:         	14046
+Main genome contig total:           	14046
+Main genome scaffold sequence total:	157.157 Mb
+Main genome contig sequence total:  	157.157 Mb  	0.000% gap
+Main genome scaffold N/L50:         	2450/16.378 Kbp
+Main genome contig N/L50:           	2450/16.378 Kbp
+Main genome scaffold N/L90:         	9065/5.202 Kbp
+Main genome contig N/L90:           	9065/5.202 Kbp
+Max scaffold length:                	184.697 Kbp
+Max contig length:                  	184.697 Kbp
+Number of scaffolds > 50 KB:        	310
+% main genome in scaffolds > 50 KB: 	14.09%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	        14,046	        14,046	   157,157,318	   157,157,318	 100.00%
+    250 	        14,046	        14,046	   157,157,318	   157,157,318	 100.00%
+    500 	        14,040	        14,040	   157,154,593	   157,154,593	 100.00%
+  1 Kbp 	        13,904	        13,904	   157,057,624	   157,057,624	 100.00%
+2.5 Kbp 	        12,501	        12,501	   154,337,709	   154,337,709	 100.00%
+  5 Kbp 	         9,286	         9,286	   142,571,473	   142,571,473	 100.00%
+ 10 Kbp 	         5,068	         5,068	   111,953,186	   111,953,186	 100.00%
+ 25 Kbp 	         1,300	         1,300	    55,927,837	    55,927,837	 100.00%
+ 50 Kbp 	           310	           310	    22,149,942	    22,149,942	 100.00%
+100 Kbp 	            35	            35	     4,273,558	     4,273,558	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:47:00
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S2/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1901	0.3117	0.3105	0.1877	0.0000	0.0000	0.0000	0.6222	0.1022
+
+Main genome scaffold total:         	1429379
+Main genome contig total:           	1429379
+Main genome scaffold sequence total:	1864.646 Mb
+Main genome contig sequence total:  	1864.646 Mb  	0.000% gap
+Main genome scaffold N/L50:         	91545/2.738 Kbp
+Main genome contig N/L50:           	91545/2.738 Kbp
+Main genome scaffold N/L90:         	919744/453
+Main genome contig N/L90:           	919744/453
+Max scaffold length:                	1.093 Mbp
+Max contig length:                  	1.093 Mbp
+Number of scaffolds > 50 KB:        	2624
+% main genome in scaffolds > 50 KB: 	15.72%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,429,379	     1,429,379	 1,864,645,586	 1,864,645,586	 100.00%
+    100 	     1,429,379	     1,429,379	 1,864,645,586	 1,864,645,586	 100.00%
+    250 	     1,418,161	     1,418,161	 1,862,142,490	 1,862,142,490	 100.00%
+    500 	       807,019	       807,019	 1,625,749,368	 1,625,749,368	 100.00%
+  1 Kbp 	       327,589	       327,589	 1,298,139,581	 1,298,139,581	 100.00%
+2.5 Kbp 	       102,549	       102,549	   961,136,680	   961,136,680	 100.00%
+  5 Kbp 	        42,725	        42,725	   755,808,694	   755,808,694	 100.00%
+ 10 Kbp 	        17,834	        17,834	   585,158,359	   585,158,359	 100.00%
+ 25 Kbp 	         5,918	         5,918	   405,988,362	   405,988,362	 100.00%
+ 50 Kbp 	         2,624	         2,624	   293,200,299	   293,200,299	 100.00%
+100 Kbp 	           991	           991	   180,837,588	   180,837,588	 100.00%
+250 Kbp 	           146	           146	    55,396,952	    55,396,952	 100.00%
+500 Kbp 	            23	            23	    14,992,667	    14,992,667	 100.00%
+  1 Mbp 	             1	             1	     1,093,351	     1,093,351	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:47:13
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S2/assembly.metamdbg/contigs.fasta
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1965	0.3036	0.3032	0.1967	0.0000	0.0000	0.0000	0.6068	0.0908
+
+Main genome scaffold total:         	9033
+Main genome contig total:           	9033
+Main genome scaffold sequence total:	137.119 Mb
+Main genome contig sequence total:  	137.119 Mb  	0.000% gap
+Main genome scaffold N/L50:         	1413/19.745 Kbp
+Main genome contig N/L50:           	1413/19.745 Kbp
+Main genome scaffold N/L90:         	6195/7.574 Kbp
+Main genome contig N/L90:           	6195/7.574 Kbp
+Max scaffold length:                	3.767 Mbp
+Max contig length:                  	3.767 Mbp
+Number of scaffolds > 50 KB:        	281
+% main genome in scaffolds > 50 KB: 	26.19%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	         9,033	         9,033	   137,118,508	   137,118,508	 100.00%
+  1 Kbp 	         9,033	         9,033	   137,118,508	   137,118,508	 100.00%
+2.5 Kbp 	         9,033	         9,033	   137,118,508	   137,118,508	 100.00%
+  5 Kbp 	         7,449	         7,449	   131,289,135	   131,289,135	 100.00%
+ 10 Kbp 	         4,166	         4,166	   105,728,883	   105,728,883	 100.00%
+ 25 Kbp 	           935	           935	    57,991,249	    57,991,249	 100.00%
+ 50 Kbp 	           281	           281	    35,906,123	    35,906,123	 100.00%
+100 Kbp 	            88	            88	    22,994,361	    22,994,361	 100.00%
+250 Kbp 	            19	            19	    12,909,327	    12,909,327	 100.00%
+500 Kbp 	             8	             8	     9,065,453	     9,065,453	 100.00%
+  1 Mbp 	             2	             2	     4,894,516	     4,894,516	 100.00%
+2.5 Mbp 	             1	             1	     3,766,639	     3,766,639	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:47:15
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S2/assembly.metaspades_hybrid/assembly.fasta
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1897	0.3079	0.3095	0.1929	0.0000	0.0000	0.0000	0.6174	0.1208
+
+Main genome scaffold total:         	4058030
+Main genome contig total:           	4058030
+Main genome scaffold sequence total:	2638.478 Mb
+Main genome contig sequence total:  	2638.478 Mb  	0.000% gap
+Main genome scaffold N/L50:         	297136/1.105 Kbp
+Main genome contig N/L50:           	297136/1.105 Kbp
+Main genome scaffold N/L90:         	1996107/294
+Main genome contig N/L90:           	1996107/294
+Max scaffold length:                	5.064 Mbp
+Max contig length:                  	5.064 Mbp
+Number of scaffolds > 50 KB:        	2616
+% main genome in scaffolds > 50 KB: 	13.62%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     4,058,030	     4,058,030	 2,638,478,457	 2,638,478,457	 100.00%
+     50 	     4,058,030	     4,058,030	 2,638,478,457	 2,638,478,457	 100.00%
+    100 	     4,026,002	     4,026,002	 2,636,195,588	 2,636,195,588	 100.00%
+    250 	     2,753,045	     2,753,045	 2,350,625,501	 2,350,625,501	 100.00%
+    500 	       881,427	       881,427	 1,732,590,995	 1,732,590,995	 100.00%
+  1 Kbp 	       339,759	       339,759	 1,364,145,256	 1,364,145,256	 100.00%
+2.5 Kbp 	       101,084	       101,084	 1,008,699,718	 1,008,699,718	 100.00%
+  5 Kbp 	        41,341	        41,341	   804,303,214	   804,303,214	 100.00%
+ 10 Kbp 	        17,165	        17,165	   638,842,769	   638,842,769	 100.00%
+ 25 Kbp 	         5,794	         5,794	   469,423,250	   469,423,250	 100.00%
+ 50 Kbp 	         2,616	         2,616	   359,345,014	   359,345,014	 100.00%
+100 Kbp 	         1,125	         1,125	   256,491,445	   256,491,445	 100.00%
+250 Kbp 	           285	           285	   129,671,965	   129,671,965	 100.00%
+500 Kbp 	            57	            57	    53,147,503	    53,147,503	 100.00%
+  1 Mbp 	            14	            14	    22,422,399	    22,422,399	 100.00%
+2.5 Mbp 	             1	             1	     5,064,414	     5,064,414	 100.00%
+  5 Mbp 	             1	             1	     5,064,414	     5,064,414	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:47:31
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S3/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1806	0.3212	0.3198	0.1784	0.0000	0.0000	0.0000	0.6410	0.0863
+
+Main genome scaffold total:         	1222262
+Main genome contig total:           	1222262
+Main genome scaffold sequence total:	1560.107 Mb
+Main genome contig sequence total:  	1560.107 Mb  	0.000% gap
+Main genome scaffold N/L50:         	78422/2.714 Kbp
+Main genome contig N/L50:           	78422/2.714 Kbp
+Main genome scaffold N/L90:         	786817/445
+Main genome contig N/L90:           	786817/445
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2059
+% main genome in scaffolds > 50 KB: 	13.66%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,222,262	     1,222,262	 1,560,106,687	 1,560,106,687	 100.00%
+    100 	     1,222,262	     1,222,262	 1,560,106,687	 1,560,106,687	 100.00%
+    250 	     1,207,177	     1,207,177	 1,556,739,905	 1,556,739,905	 100.00%
+    500 	       684,965	       684,965	 1,356,673,143	 1,356,673,143	 100.00%
+  1 Kbp 	       268,993	       268,993	 1,073,405,969	 1,073,405,969	 100.00%
+2.5 Kbp 	        86,541	        86,541	   801,192,166	   801,192,166	 100.00%
+  5 Kbp 	        37,291	        37,291	   631,425,121	   631,425,121	 100.00%
+ 10 Kbp 	        15,993	        15,993	   485,146,859	   485,146,859	 100.00%
+ 25 Kbp 	         5,293	         5,293	   324,091,829	   324,091,829	 100.00%
+ 50 Kbp 	         2,060	         2,060	   213,188,098	   213,188,098	 100.00%
+100 Kbp 	           704	           704	   120,285,579	   120,285,579	 100.00%
+250 Kbp 	            91	            91	    31,834,009	    31,834,009	 100.00%
+500 Kbp 	             8	             8	     5,367,650	     5,367,650	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:47:42
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S4/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1759	0.3259	0.3245	0.1738	0.0000	0.0000	0.0000	0.6503	0.0822
+
+Main genome scaffold total:         	1441877
+Main genome contig total:           	1441877
+Main genome scaffold sequence total:	1726.316 Mb
+Main genome contig sequence total:  	1726.316 Mb  	0.000% gap
+Main genome scaffold N/L50:         	101088/2.301 Kbp
+Main genome contig N/L50:           	101088/2.301 Kbp
+Main genome scaffold N/L90:         	952470/428
+Main genome contig N/L90:           	952470/428
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2083
+% main genome in scaffolds > 50 KB: 	12.05%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,441,877	     1,441,877	 1,726,316,067	 1,726,316,067	 100.00%
+    100 	     1,441,877	     1,441,877	 1,726,316,067	 1,726,316,067	 100.00%
+    250 	     1,426,168	     1,426,168	 1,722,810,525	 1,722,810,525	 100.00%
+    500 	       784,319	       784,319	 1,476,791,471	 1,476,791,471	 100.00%
+  1 Kbp 	       297,303	       297,303	 1,145,473,546	 1,145,473,546	 100.00%
+2.5 Kbp 	        91,262	        91,262	   839,658,993	   839,658,993	 100.00%
+  5 Kbp 	        39,584	        39,584	   662,756,274	   662,756,274	 100.00%
+ 10 Kbp 	        17,694	        17,694	   512,067,611	   512,067,611	 100.00%
+ 25 Kbp 	         5,607	         5,607	   329,288,961	   329,288,961	 100.00%
+ 50 Kbp 	         2,083	         2,083	   207,968,837	   207,968,837	 100.00%
+100 Kbp 	           677	           677	   112,306,519	   112,306,519	 100.00%
+250 Kbp 	            66	            66	    23,676,423	    23,676,423	 100.00%
+500 Kbp 	             6	             6	     3,827,821	     3,827,821	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:47:54
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S5/assembly.flye/assembly.fasta
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1921	0.3076	0.3084	0.1920	0.0000	0.0000	0.0000	0.6159	0.0896
+
+Main genome scaffold total:         	7438
+Main genome contig total:           	7438
+Main genome scaffold sequence total:	89.315 Mb
+Main genome contig sequence total:  	89.315 Mb  	0.000% gap
+Main genome scaffold N/L50:         	1337/17.276 Kbp
+Main genome contig N/L50:           	1337/17.276 Kbp
+Main genome scaffold N/L90:         	4866/5.69 Kbp
+Main genome contig N/L90:           	4866/5.69 Kbp
+Max scaffold length:                	245.287 Kbp
+Max contig length:                  	245.287 Kbp
+Number of scaffolds > 50 KB:        	181
+% main genome in scaffolds > 50 KB: 	15.12%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	         7,438	         7,438	    89,315,419	    89,315,419	 100.00%
+    500 	         7,438	         7,438	    89,315,419	    89,315,419	 100.00%
+  1 Kbp 	         7,380	         7,380	    89,271,020	    89,271,020	 100.00%
+2.5 Kbp 	         6,804	         6,804	    88,115,954	    88,115,954	 100.00%
+  5 Kbp 	         5,253	         5,253	    82,463,870	    82,463,870	 100.00%
+ 10 Kbp 	         2,921	         2,921	    65,491,663	    65,491,663	 100.00%
+ 25 Kbp 	           721	           721	    32,089,547	    32,089,547	 100.00%
+ 50 Kbp 	           181	           181	    13,505,883	    13,505,883	 100.00%
+100 Kbp 	            24	            24	     3,274,473	     3,274,473	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:47:55
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S5/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1878	0.3140	0.3127	0.1854	0.0000	0.0000	0.0000	0.6268	0.0964
+
+Main genome scaffold total:         	1706746
+Main genome contig total:           	1706746
+Main genome scaffold sequence total:	2009.647 Mb
+Main genome contig sequence total:  	2009.647 Mb  	0.000% gap
+Main genome scaffold N/L50:         	134064/2.132 Kbp
+Main genome contig N/L50:           	134064/2.132 Kbp
+Main genome scaffold N/L90:         	1140129/431
+Main genome contig N/L90:           	1140129/431
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2350
+% main genome in scaffolds > 50 KB: 	11.81%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,706,746	     1,706,746	 2,009,647,367	 2,009,647,367	 100.00%
+    100 	     1,706,746	     1,706,746	 2,009,647,367	 2,009,647,367	 100.00%
+    250 	     1,691,509	     1,691,509	 2,006,248,122	 2,006,248,122	 100.00%
+    500 	       942,585	       942,585	 1,717,631,034	 1,717,631,034	 100.00%
+  1 Kbp 	       360,525	       360,525	 1,322,275,728	 1,322,275,728	 100.00%
+2.5 Kbp 	       108,989	       108,989	   947,105,007	   947,105,007	 100.00%
+  5 Kbp 	        44,406	        44,406	   726,068,255	   726,068,255	 100.00%
+ 10 Kbp 	        18,410	        18,410	   547,896,600	   547,896,600	 100.00%
+ 25 Kbp 	         5,899	         5,899	   359,403,156	   359,403,156	 100.00%
+ 50 Kbp 	         2,350	         2,350	   237,329,291	   237,329,291	 100.00%
+100 Kbp 	           766	           766	   128,668,126	   128,668,126	 100.00%
+250 Kbp 	            79	            79	    27,988,596	    27,988,596	 100.00%
+500 Kbp 	             5	             5	     3,547,051	     3,547,051	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:48:09
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S5/assembly.metaspades_hybrid/assembly.fasta
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1850	0.3126	0.3142	0.1882	0.0000	0.0000	0.0000	0.6268	0.1066
+
+Main genome scaffold total:         	5521376
+Main genome contig total:           	5521376
+Main genome scaffold sequence total:	3195.668 Mb
+Main genome contig sequence total:  	3195.668 Mb  	0.000% gap
+Main genome scaffold N/L50:         	573674/773
+Main genome contig N/L50:           	573674/773
+Main genome scaffold N/L90:         	1606035/401
+Main genome contig N/L90:           	1606035/401
+Max scaffold length:                	3.009 Mbp
+Max contig length:                  	3.009 Mbp
+Number of scaffolds > 50 KB:        	2634
+% main genome in scaffolds > 50 KB: 	9.66%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     5,521,376	     5,521,376	 3,195,668,207	 3,195,668,207	 100.00%
+     50 	     5,521,376	     5,521,376	 3,195,668,207	 3,195,668,207	 100.00%
+    100 	     5,486,898	     5,486,898	 3,193,203,550	 3,193,203,550	 100.00%
+    250 	     3,750,732	     3,750,732	 2,802,436,923	 2,802,436,923	 100.00%
+    500 	     1,121,954	     1,121,954	 1,932,745,072	 1,932,745,072	 100.00%
+  1 Kbp 	       392,230	       392,230	 1,439,892,602	 1,439,892,602	 100.00%
+2.5 Kbp 	       110,230	       110,230	 1,024,103,860	 1,024,103,860	 100.00%
+  5 Kbp 	        44,894	        44,894	   800,752,801	   800,752,801	 100.00%
+ 10 Kbp 	        18,642	        18,642	   620,663,815	   620,663,815	 100.00%
+ 25 Kbp 	         6,260	         6,260	   434,128,654	   434,128,654	 100.00%
+ 50 Kbp 	         2,634	         2,634	   308,841,410	   308,841,410	 100.00%
+100 Kbp 	         1,003	         1,003	   195,261,883	   195,261,883	 100.00%
+250 Kbp 	           167	           167	    70,547,503	    70,547,503	 100.00%
+500 Kbp 	            25	            25	    23,186,719	    23,186,719	 100.00%
+  1 Mbp 	             7	             7	    11,351,863	    11,351,863	 100.00%
+2.5 Mbp 	             1	             1	     3,009,451	     3,009,451	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:48:30
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S6/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1805	0.3212	0.3200	0.1784	0.0000	0.0000	0.0000	0.6412	0.0876
+
+Main genome scaffold total:         	1352738
+Main genome contig total:           	1352738
+Main genome scaffold sequence total:	1670.730 Mb
+Main genome contig sequence total:  	1670.730 Mb  	0.000% gap
+Main genome scaffold N/L50:         	95250/2.44 Kbp
+Main genome contig N/L50:           	95250/2.44 Kbp
+Main genome scaffold N/L90:         	883523/439
+Main genome contig N/L90:           	883523/439
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2158
+% main genome in scaffolds > 50 KB: 	13.08%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,352,738	     1,352,738	 1,670,730,453	 1,670,730,453	 100.00%
+    100 	     1,352,738	     1,352,738	 1,670,730,453	 1,670,730,453	 100.00%
+    250 	     1,336,314	     1,336,314	 1,667,071,992	 1,667,071,992	 100.00%
+    500 	       755,430	       755,430	 1,444,350,113	 1,444,350,113	 100.00%
+  1 Kbp 	       294,582	       294,582	 1,130,347,427	 1,130,347,427	 100.00%
+2.5 Kbp 	        92,450	        92,450	   828,455,465	   828,455,465	 100.00%
+  5 Kbp 	        38,482	        38,482	   643,198,693	   643,198,693	 100.00%
+ 10 Kbp 	        16,132	        16,132	   489,902,235	   489,902,235	 100.00%
+ 25 Kbp 	         5,264	         5,264	   326,532,545	   326,532,545	 100.00%
+ 50 Kbp 	         2,158	         2,158	   218,542,763	   218,542,763	 100.00%
+100 Kbp 	           695	           695	   118,562,620	   118,562,620	 100.00%
+250 Kbp 	            88	            88	    30,318,536	    30,318,536	 100.00%
+500 Kbp 	             6	             6	     4,054,258	     4,054,258	 100.00%
+  1 Mbp 	             1	             1	     1,010,816	     1,010,816	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:48:42
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S7/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1788	0.3229	0.3217	0.1766	0.0000	0.0000	0.0000	0.6446	0.0855
+
+Main genome scaffold total:         	1460611
+Main genome contig total:           	1460611
+Main genome scaffold sequence total:	1742.362 Mb
+Main genome contig sequence total:  	1742.362 Mb  	0.000% gap
+Main genome scaffold N/L50:         	105525/2.237 Kbp
+Main genome contig N/L50:           	105525/2.237 Kbp
+Main genome scaffold N/L90:         	965311/430
+Main genome contig N/L90:           	965311/430
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2274
+% main genome in scaffolds > 50 KB: 	12.92%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,460,611	     1,460,611	 1,742,361,706	 1,742,361,706	 100.00%
+    100 	     1,460,611	     1,460,611	 1,742,361,706	 1,742,361,706	 100.00%
+    250 	     1,442,248	     1,442,248	 1,738,267,542	 1,738,267,542	 100.00%
+    500 	       802,189	       802,189	 1,493,068,625	 1,493,068,625	 100.00%
+  1 Kbp 	       304,336	       304,336	 1,154,597,186	 1,154,597,186	 100.00%
+2.5 Kbp 	        91,452	        91,452	   837,957,352	   837,957,352	 100.00%
+  5 Kbp 	        38,119	        38,119	   655,322,442	   655,322,442	 100.00%
+ 10 Kbp 	        16,677	        16,677	   508,364,221	   508,364,221	 100.00%
+ 25 Kbp 	         5,669	         5,669	   342,175,358	   342,175,358	 100.00%
+ 50 Kbp 	         2,274	         2,274	   225,173,993	   225,173,993	 100.00%
+100 Kbp 	           692	           692	   116,249,207	   116,249,207	 100.00%
+250 Kbp 	            74	            74	    26,603,955	    26,603,955	 100.00%
+500 Kbp 	             8	             8	     5,417,075	     5,417,075	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:48:53
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S8/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1804	0.3213	0.3200	0.1783	0.0000	0.0000	0.0000	0.6413	0.0876
+
+Main genome scaffold total:         	1458942
+Main genome contig total:           	1458942
+Main genome scaffold sequence total:	1769.207 Mb
+Main genome contig sequence total:  	1769.207 Mb  	0.000% gap
+Main genome scaffold N/L50:         	111084/2.256 Kbp
+Main genome contig N/L50:           	111084/2.256 Kbp
+Main genome scaffold N/L90:         	964167/438
+Main genome contig N/L90:           	964167/438
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2172
+% main genome in scaffolds > 50 KB: 	12.15%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,458,942	     1,458,942	 1,769,206,711	 1,769,206,711	 100.00%
+    100 	     1,458,942	     1,458,942	 1,769,206,711	 1,769,206,711	 100.00%
+    250 	     1,444,656	     1,444,656	 1,766,023,538	 1,766,023,538	 100.00%
+    500 	       815,256	       815,256	 1,523,253,579	 1,523,253,579	 100.00%
+  1 Kbp 	       321,434	       321,434	 1,186,458,501	 1,186,458,501	 100.00%
+2.5 Kbp 	        97,134	        97,134	   851,554,218	   851,554,218	 100.00%
+  5 Kbp 	        39,264	        39,264	   653,545,893	   653,545,893	 100.00%
+ 10 Kbp 	        16,657	        16,657	   498,611,717	   498,611,717	 100.00%
+ 25 Kbp 	         5,505	         5,505	   330,555,098	   330,555,098	 100.00%
+ 50 Kbp 	         2,172	         2,172	   214,915,515	   214,915,515	 100.00%
+100 Kbp 	           679	           679	   113,932,359	   113,932,359	 100.00%
+250 Kbp 	            78	            78	    26,869,453	    26,869,453	 100.00%
+500 Kbp 	             4	             4	     2,884,516	     2,884,516	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+
+============================================================
+Timestamp: 2026-02-25 16:49:05
+Assembly: /storage/biology/projects/miller-lowry/beitner/metagenomic-multi-assembly-wrapper/assemblies/S9/assembly.megahit/final.contigs.fa
+============================================================
+A	C	G	T	N	IUPAC	Other	GC	GC_stdev
+0.1802	0.3215	0.3202	0.1782	0.0000	0.0000	0.0000	0.6417	0.0864
+
+Main genome scaffold total:         	1499047
+Main genome contig total:           	1499047
+Main genome scaffold sequence total:	1946.514 Mb
+Main genome contig sequence total:  	1946.514 Mb  	0.000% gap
+Main genome scaffold N/L50:         	101985/2.679 Kbp
+Main genome contig N/L50:           	101985/2.679 Kbp
+Main genome scaffold N/L90:         	961275/457
+Main genome contig N/L90:           	961275/457
+Max scaffold length:                	1.011 Mbp
+Max contig length:                  	1.011 Mbp
+Number of scaffolds > 50 KB:        	2434
+% main genome in scaffolds > 50 KB: 	12.60%
+
+
+Minimum 	Number        	Number        	Total         	Total         	Scaffold
+Scaffold	of            	of            	Scaffold      	Contig        	Contig  
+Length  	Scaffolds     	Contigs       	Length        	Length        	Coverage
+--------	--------------	--------------	--------------	--------------	--------
+    All 	     1,499,047	     1,499,047	 1,946,513,769	 1,946,513,769	 100.00%
+    100 	     1,499,047	     1,499,047	 1,946,513,769	 1,946,513,769	 100.00%
+    250 	     1,479,625	     1,479,625	 1,942,182,521	 1,942,182,521	 100.00%
+    500 	       866,587	       866,587	 1,706,687,352	 1,706,687,352	 100.00%
+  1 Kbp 	       349,578	       349,578	 1,353,753,659	 1,353,753,659	 100.00%
+2.5 Kbp 	       111,028	       111,028	   996,683,051	   996,683,051	 100.00%
+  5 Kbp 	        47,311	        47,311	   777,715,804	   777,715,804	 100.00%
+ 10 Kbp 	        20,380	        20,380	   592,396,640	   592,396,640	 100.00%
+ 25 Kbp 	         6,419	         6,419	   382,007,784	   382,007,784	 100.00%
+ 50 Kbp 	         2,434	         2,434	   245,255,312	   245,255,312	 100.00%
+100 Kbp 	           761	           761	   131,020,721	   131,020,721	 100.00%
+250 Kbp 	            98	            98	    34,819,280	    34,819,280	 100.00%
+500 Kbp 	             6	             6	     4,275,854	     4,275,854	 100.00%
+  1 Mbp 	             1	             1	     1,010,660	     1,010,660	 100.00%
+
+

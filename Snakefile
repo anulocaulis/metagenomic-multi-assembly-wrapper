@@ -27,10 +27,12 @@ else:
 
 # Container Paths
 ASSEMBLY_CONTAINER = "containers/assembler2.sif"
+IDBAUD_CONTAINER = "containers/idba-ud_151.sif"
 FLYE_ASSEMBLY_CONTAINER = "containers/flye_assembler.sif"
 QC_CONTAINER = "containers/qc_tools_miniconda.sif"
 CHOPPER_CONTAINER = "containers/chopper_0.7.0--hdcf5f25_0.sif"
 PORECHOP_CONTAINER = "containers/porechop_0.2.4--py39h2de1943_9.sif"
+NEXTPOLISH_CONTAINER = "containers/nextpolish.sif"
 
 # ===========================
 # Include Module Rules
@@ -48,6 +50,9 @@ rule all:
         # Read prep outputs (all samples get trimmed short reads)
         expand("trimmed_reads/{sample}_interleaved_trimmed.fastq.gz", sample=ALL_SAMPLES),
         
+        # PolyG filtering (all samples)
+        expand("trimmed_reads/{sample}_interleaved_trimmed_polyG_filtered.fastq.gz", sample=ALL_SAMPLES),
+        
         # Long-read filtering (only long-read samples)
         expand("data/{sample}_long_reads_filtered.fastq.gz", sample=LONG_READ_SAMPLES),
         
@@ -60,13 +65,13 @@ rule all:
         # Short-read assemblies (all samples)
         expand("{output_dir}/{sample}/assembly.megahit/final.contigs.fa", 
                output_dir=config["output_dir"], sample=ALL_SAMPLES),
-        expand("{output_dir}/{sample}/assembly.metaspades/assembly.fasta", 
+        expand("{output_dir}/{sample}/assembly.metaspades/contigs.fasta", 
                output_dir=config["output_dir"], sample=ALL_SAMPLES),
-        # expand("{output_dir}/{sample}/assembly.idbaud/assembly.fasta", 
-        #        output_dir=config["output_dir"], sample=ALL_SAMPLES),
+        expand("{output_dir}/{sample}/assembly.idbaud/assembly.fasta", 
+               output_dir=config["output_dir"], sample=ALL_SAMPLES),
         
         # Hybrid assemblies (only for long-read samples)
         expand("{output_dir}/{sample}/assembly.metaspades_hybrid/assembly.fasta", 
                output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
-        # expand("{output_dir}/{sample}/assembly.nextpolish/assembly.fasta", 
-        #        output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
+        expand("{output_dir}/{sample}/assembly.nextpolish/assembly.fasta", 
+               output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),

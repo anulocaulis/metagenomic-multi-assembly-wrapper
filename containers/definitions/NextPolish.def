@@ -1,0 +1,25 @@
+Bootstrap: docker
+From: condaforge/mambaforge:latest # Reliable base image with Mamba/Conda
+
+%environment
+    # Ensure Conda bin is in PATH for execution
+    export PATH="/opt/conda/bin:$PATH"
+
+%post
+    # Set up environment variables for Conda/Mamba
+    export PATH="/opt/conda/bin:$PATH"
+
+    # Install NextPolish plus tools used by the alignment-based polishing workflow
+    # Uses Mamba (faster than Conda)
+    mamba install -c bioconda -c conda-forge -y \
+        nextpolish=1.4.1 \
+        paralleltask \
+        bwa \
+        samtools
+    
+    # Clean up cache to minimize SIF file size
+    mamba clean --all -y
+
+%runscript
+    # The default command when running the container (e.g., `singularity run nextpolish.sif`)
+    exec nextPolish "$@"
