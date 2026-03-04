@@ -1,0 +1,63 @@
+Bootstrap: docker
+From: continuumio/miniconda3:latest
+
+# To build this container image, use the command below on a Linux machine with Singularity:
+# sudo singularity build classification.sif classification.def
+
+%environment
+    export LC_ALL=C
+    export PATH=/opt/conda/bin:$PATH
+
+%post
+    # 1. Update APT and install core dependencies
+    apt-get update && \
+    apt-get install -y --no-install-recommends \
+        wget \
+        git \
+        bzip2 \
+        build-essential && \
+    apt-get clean
+
+    # 2. Install Kraken2, Bracken, and Kaiju via Bioconda
+    /opt/conda/bin/conda install -y \
+        --channel conda-forge \
+        --channel bioconda \
+        --override-channels \
+        kraken2 \
+        bracken \
+        kaiju \
+        krakentools
+
+    # 3. Clean up Conda caches
+    /opt/conda/bin/conda clean -a -y
+
+%runscript
+    exec "$@"
+
+%labels
+Maintainer lowry-nitrogen-team
+CreationDate 2025-10-06
+Version 1.0-conda
+Description Singularity container for taxonomic classification: Kraken2, Bracken, Kaiju.
+
+%help
+This Singularity container provides tools for metagenomic taxonomic classification:
+
+- kraken2: k-mer-based taxonomic sequence classification
+- bracken: Bayesian re-estimation of abundance with KrakEN
+- kaiju: protein-level classification of metagenomic reads
+- krakentools: utility scripts for Kraken2 output processing
+
+USAGE:
+singularity exec classification.sif kraken2 --help
+singularity exec classification.sif bracken --help
+singularity exec classification.sif kaiju --help
+
+Example Kraken2 classification:
+singularity exec classification.sif kraken2 \
+    --db /path/to/kraken2_db \
+    --threads 16 \
+    --output output.kraken \
+    --report report.txt \
+    --gzip-compressed \
+    reads.fastq.gz

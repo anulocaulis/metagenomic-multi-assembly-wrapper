@@ -47,3 +47,13 @@ porechop:
   enabled: true
   threads: 8
   extra_args: ""
+
+# Taxonomic classification settings (classification.smk)
+# Path to a pre-built Kraken2 database (e.g. standard, PlusPF, or custom)
+kraken2_db: "/storage/biology/projects/miller-lowry/beitner/databases/kraken2_standard"
+# Read length used when building the Bracken database (must match the DB)
+bracken_read_length: 150
+# Taxonomic level for Bracken abundance estimates: D/P/C/O/F/G/S
+bracken_level: "S"
+# Minimum number of reads required for Bracken to report a taxon
+bracken_threshold: 10
