@@ -33,6 +33,8 @@ QC_CONTAINER = "containers/qc_tools_miniconda.sif"
 CHOPPER_CONTAINER = "containers/chopper_0.7.0--hdcf5f25_0.sif"
 PORECHOP_CONTAINER = "containers/porechop_0.2.4--py39h2de1943_9.sif"
 NEXTPOLISH_CONTAINER = "containers/nextpolish.sif"
+METAWRAP_CONTAINER = "containers/metawrap.sif"
+CLASSIFICATION_CONTAINER = "containers/classification.sif"
 
 # ===========================
 # Include Module Rules
@@ -40,6 +42,8 @@ NEXTPOLISH_CONTAINER = "containers/nextpolish.sif"
 
 include: "modules/read_prep.smk"
 include: "modules/assembly.smk"
+include: "modules/binning.smk"
+include: "modules/classification.smk"
 
 # ===========================
 # Target Rule
