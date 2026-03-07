@@ -1,0 +1,173 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+
+# To build this container image, use the command below:
+# sudo singularity build metaconnet.sif metaconnet.def
+
+
+%environment
+    export LC_ALL=C
+    export PATH=/opt/conda/envs/metaconda/bin:/opt/conda/bin:/usr/local/bin:$PATH
+
+%post
+    # Update and install core system dependencies
+    apt-get update -y
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        autoconf \
+        automake \
+        cmake \
+        wget \
+        git \
+        curl \
+        unzip \
+        bzip2 \
+        ca-certificates \
+        libssl-dev \
+        python3 \
+        python3-pip
+
+    # Download and install Miniconda
+    curl -sSL https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -o miniconda.sh
+    bash miniconda.sh -b -p /opt/conda
+    rm miniconda.sh
+
+    # Add conda to PATH for this script (MUST be done before first conda command)
+    export PATH="/opt/conda/bin:$PATH"
+
+    # Ensure channel order for successful installation (samtools/minimap2/etc.)
+    conda config --system --remove-key channels || true
+    conda config --system --add channels conda-forge
+    conda config --system --add channels bioconda
+    conda config --system --add channels defaults
+    conda config --system --set channel_priority strict
+
+    # Accept Anaconda Terms of Service in non-interactive builds (required for defaults)
+    if conda tos --help >/dev/null 2>&1; then
+        conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/main || true
+        conda tos accept --override-channels --channel https://repo.anaconda.com/pkgs/r || true
+    fi
+
+    # Create metaconnet environment with required dependencies + bbtools (reformat.sh)
+    conda create -y -n metaconda \
+        python=3.9 \
+        pip \
+        minimap2 \
+        samtools \
+        bbmap
+
+    # Activate env and install metaconnet from source repository
+    # Replace METACONNET_REPO with your project URL if needed.
+    . /opt/conda/etc/profile.d/conda.sh
+    conda activate metaconda
+    export PIP_NO_BUILD_ISOLATION=1
+    export PIP_USE_PEP517=0
+    pip install --no-cache-dir --upgrade pip setuptools wheel numpy
+
+    METACONNET_REPO="https://github.com/Axbio/MetaCONNET.git"
+    git clone "$METACONNET_REPO" /opt/metaconnet
+    cd /opt/metaconnet
+
+    if [ -f install.bash ]; then
+        bash install.bash || true
+    fi
+
+    # Robust fallback / finalization path (line-by-line style install)
+    if [ -f env.yml ]; then
+        conda env update -n metaconda -f env.yml || true
+    fi
+    pip install --no-cache-dir --upgrade pip setuptools wheel numpy
+    if [ -f requirements.txt ]; then
+        pip install --no-cache-dir -r requirements.txt
+    fi
+    pip install --no-build-isolation .
+
+    # Symlink key commands into /usr/local/bin for convenience
+    ln -sf /opt/conda/envs/metaconda/bin/minimap2 /usr/local/bin/minimap2
+    ln -sf /opt/conda/envs/metaconda/bin/samtools /usr/local/bin/samtools
+    ln -sf /opt/conda/envs/metaconda/bin/reformat.sh /usr/local/bin/reformat.sh
+
+    # --- Clean up ---
+    conda clean --all -y
+    apt-get clean
+    rm -rf /var/lib/apt/lists/*
+
+%environment
+    # Set the default locale
+    export LC_ALL=C
+
+    # 1. Add metaconda environment binaries to PATH
+    export PATH="/opt/conda/envs/metaconda/bin:/opt/conda/bin:$PATH"
+
+    # 2. Add manually linked tools directory
+    export PATH="/usr/local/bin:$PATH"
+
+
+%runscript
+    echo "==================================================================="
+    echo "This container includes MetaconNet environment and dependencies:"
+    echo "  - metaconnet (installed from source)"
+    echo "  - minimap2"
+    echo "  - samtools"
+    echo "  - bbtools reformat.sh (for splitting interleaved reads)"
+    echo "-------------------------------------------------------------------"
+    echo "Examples:"
+    echo "  singularity exec metaconnet.sif reformat.sh in=reads.fq out1=R1.fq out2=R2.fq"
+    echo "  singularity exec metaconnet.sif samtools --version"
+    echo "  singularity exec metaconnet.sif minimap2 --help"
+    echo "==================================================================="
+
+    # Execute the command passed by the user
+    exec "$@"
+
+%labels
+Maintainer lowry-nitrogen-team
+CreationDate 2026-03-06
+Version 1.0-metaconnet
+Description Singularity container with metaconnet, minimap2, samtools, and bbtools (reformat.sh)
+
+
+%help
+This Apptainer (Singularity) container provides a MetaconNet-ready environment
+with the requested dependency setup and bbtools support.
+
+How to install
+Conda installation
+
+    download conda from https://docs.anaconda.com/miniconda/ ; run conda init and reopen shell terminal
+    clone this project
+    At project directory, run bash install.bash
+
+The conda environment metaconda will be created and the metaconnet is in the conda env.
+
+# if an error like "conda init before activate" appears
+# just run bash line by line
+conda env create -n metaconda -f env.yml # to create conda environment
+conda activate metaconda # activate the newly installed environment
+pip install . # install the current version of metaconnet by source code
+
+    If samtools has been unsuccessful to be installed, check the conda env channel order.
+    The channel order to correctly install is
+
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+
+No conda installation
+Step 1 : Install dependencies
+
+    minimap2
+    samtools
+    python3.8 or python 3.9
+    Make sure samtools, minimap2 and python are at the bin path
+
+Step 2: Installation
+
+    Clone this project
+    At project directory, run pip install -r requirements.txt
+    At project directory, run pip install .
+
+Additional tool included:
+    bbtools reformat.sh (available in PATH for interleaved read splitting)

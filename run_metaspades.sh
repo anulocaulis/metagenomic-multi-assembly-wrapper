@@ -27,7 +27,7 @@ else
 fi
 
 for sample in "${SAMPLES[@]}"; do
-    INPUT_READS="${WORKDIR}/trimmed_reads/${sample}_interleaved_trimmed.fastq.gz"
+    INPUT_READS="${WORKDIR}/trimmed_reads/${sample}_interleaved_trimmed_polyG_filtered.fastq.gz"
     OUTDIR="${WORKDIR}/assemblies/${sample}/assembly.metaspades"
 
     echo ""

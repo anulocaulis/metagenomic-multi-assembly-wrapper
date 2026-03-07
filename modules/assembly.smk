@@ -16,9 +16,9 @@ rule flye_assembly:
     shell:
         """
         if [ -f {params.outdir}/params.json ]; then
-            singularity exec -B $PWD {params.container_path} flye --resume --out-dir {params.outdir} --threads {threads}
+            singularity exec -B $PWD {params.container_path} flye --resume --out-dir {params.outdir} --threads {threads} --meta
         else
-            singularity exec -B $PWD {params.container_path} flye --nano-raw {input.reads} --out-dir {params.outdir} --threads {threads}
+            singularity exec -B $PWD {params.container_path} flye --nano-raw {input.reads} --out-dir {params.outdir} --threads {threads} --meta
         fi
         """
 
@@ -73,7 +73,7 @@ rule metamdbg_assembly_direct:
 # ---
 rule idbaud_assembly:
     input:
-        reads = "trimmed_reads/{sample}_interleaved_trimmed.fastq.gz"
+        reads = "trimmed_reads/{sample}_interleaved_trimmed_polyG_filtered.fastq.gz"
     output:
         assembly = "{output_dir}/{sample}/assembly.idbaud/assembly.fasta"
     params:
@@ -102,7 +102,7 @@ rule idbaud_assembly:
 # ---
 rule metaspades_assembly:
     input:
-        reads = "trimmed_reads/{sample}_interleaved_trimmed.fastq.gz"
+        reads = "trimmed_reads/{sample}_interleaved_trimmed_polyG_filtered.fastq.gz"
     output:
         assembly = "{output_dir}/{sample}/assembly.metaspades/contigs.fasta"
     params:
@@ -131,7 +131,7 @@ rule metaspades_assembly:
 # ---
 rule megahit_assembly:
     input:
-        reads = "trimmed_reads/{sample}_interleaved_trimmed.fastq.gz"
+        reads = "trimmed_reads/{sample}_interleaved_trimmed_polyG_filtered.fastq.gz"
     output:
         assembly = "{output_dir}/{sample}/assembly.megahit/final.contigs.fa"
     params:
@@ -157,7 +157,7 @@ rule megahit_assembly:
 # ---
 rule metaspades_hybrid_assembly:
     input:
-        short_reads = "trimmed_reads/{sample}_interleaved_trimmed.fastq.gz",
+        short_reads = "trimmed_reads/{sample}_interleaved_trimmed_polyG_filtered.fastq.gz",
         long_reads = "data/{sample}_long_reads_filtered.fastq.gz"
     output:
         assembly = "{output_dir}/{sample}/assembly.metaspades_hybrid/assembly.fasta",
@@ -224,78 +224,52 @@ rule bwa_mem_map_to_flye:
         """
 
 # ---
-# Step 8: Hybrid Assembly with Flye + NextPolish (Long-Read First)
+# Step 8: Long-Read Polishing / Hybrid Scaffolding with MetaCONNET
 # ---
-rule nextpolish:
+rule metaconnet:
     input:
-        long_assembly = f"{config['output_dir']}/{{sample}}/assembly.flye/assembly.fasta",
-        mapped_short_reads_bam = f"{config['output_dir']}/{{sample}}/assembly.flye/mapped_short_reads.bam",
-        short_reads = config["input_reads"]["short_interleaved"],
-        long_reads = "data/{sample}_long_reads_filtered.fastq.gz"
-
+        short_reads = "trimmed_reads/{sample}_interleaved_trimmed_polyG_filtered.fastq.gz",
+        long_reads = "data/{sample}_long_reads_filtered.fastq.gz",
+        contigs = f"{config['output_dir']}/{{sample}}/assembly.flye/assembly.fasta"
     output:
-        assembly = f"{config['output_dir']}/{{sample}}/assembly.nextpolish/assembly.fasta",
-        sgs_fofn = f"{config['output_dir']}/{{sample}}/assembly.nextpolish/sgs.fofn",
-        lgs_fofn = f"{config['output_dir']}/{{sample}}/assembly.nextpolish/lgs.fofn",
-        run_cfg = f"{config['output_dir']}/{{sample}}/assembly.nextpolish/run.cfg"
-
+        assembly = f"{config['output_dir']}/{{sample}}/assembly.metaconnet/assembly.fasta"
     params:
-        outdir = f"{config['output_dir']}/{{sample}}/assembly.nextpolish",
-        workdir = f"{config['output_dir']}/{{sample}}/assembly.nextpolish/01_rundir",
-        container_path = NEXTPOLISH_CONTAINER
+        outdir = f"{config['output_dir']}/{{sample}}/assembly.metaconnet",
+        container_path = METACONNET_CONTAINER,
+        flowcell = config.get("metaconnet_flowcell", "R10")
     threads: config["threads"]
     resources:
-        mem_mb=512000 # Request entire node's memory for assembly rules
-    container: NEXTPOLISH_CONTAINER
+        mem_mb=900000,
+        slurm_partition="math-alderaan-gpu"
+    container: METACONNET_CONTAINER
     shell:
         """
         set -euo pipefail
-        THREADS={threads}
-        OUTDIR=$(readlink -f {params.outdir})
-        WORKDIR=$(readlink -f {params.workdir})
+        mkdir -p {params.outdir}
 
-        echo "Starting NextPolish preparation and assembly..."
-        mkdir -p $OUTDIR $WORKDIR logs
+        # Split interleaved paired-end reads into R1 / R2 for MetaCONNET --sr
+        R1={params.outdir}/sr_R1.fastq.gz
+        R2={params.outdir}/sr_R2.fastq.gz
+        zcat {input.short_reads} | \
+            paste - - - - - - - - | \
+            awk 'BEGIN{{OFS="\n"}} {{print $1,$2,$3,$4}}' | gzip -c > $R1
+        zcat {input.short_reads} | \
+            paste - - - - - - - - | \
+            awk 'BEGIN{{OFS="\n"}} {{print $5,$6,$7,$8}}' | gzip -c > $R2
 
-        # 1. Create Short-Read FOFN (sgs.fofn)
-        echo "{input.short_reads}" | tr ' ' '\n' > $OUTDIR/sgs.fofn
+        singularity exec -B $PWD {params.container_path} \
+            MetaCONNET \
+                --sr $R1 $R2 \
+                --lr {input.long_reads} \
+                --c  {input.contigs} \
+                --o  {params.outdir} \
+                --n  {wildcards.sample} \
+                --t  {threads} \
+                --fc {params.flowcell}
 
-        # 2. Create Long-Read FOFN (lgs.fofn)
-        echo "{input.long_reads}" | tr ' ' '\n' > $OUTDIR/lgs.fofn
+        # MetaCONNET names its primary output <task_name>.fasta
+        cp {params.outdir}/{wildcards.sample}.fasta {output.assembly}
 
-        # 3. Create run.cfg file
-        GENOME_SIZE=$(awk '!/^>/{sum+=length($0)} END{print sum+0}' {input.long_assembly})
-        {{
-            printf '%s\n' '[General]'
-            printf '%s\n' 'job_type = local'
-            printf '%s\n' 'job_prefix = nextPolish'
-            printf '%s\n' 'task = best'
-            printf '%s\n' 'rewrite = yes'
-            printf '%s\n' 'rerun = 3'
-            printf '%s\n' 'parallel_jobs = {threads}'
-            printf '%s\n' 'multithread_jobs = {threads}'
-            printf 'genome = %s\n' "$(readlink -f {input.long_assembly})"
-            printf 'genome_size = %s\n' "$GENOME_SIZE"
-            printf 'workdir = %s\n' "$WORKDIR"
-            printf '%s\n' 'polish_options = -p {threads}'
-            printf '%s\n' ''
-            printf '%s\n' '[sgs_option]'
-            printf 'sgs_fofn = %s\n' "$OUTDIR/sgs.fofn"
-            printf '%s\n' 'sgs_options = -max_depth 100 -bwa'
-            printf '%s\n' ''
-            printf '%s\n' '[lgs_option]'
-            printf 'lgs_fofn = %s\n' "$OUTDIR/lgs.fofn"
-            printf '%s\n' 'lgs_options = -min_read_len 1k -max_depth 100'
-            printf '%s\n' 'lgs_minimap2_options = -x map-ont'
-        }} > $OUTDIR/run.cfg
-
-        # 4. Execute NextPolish
-        singularity exec --bind $(pwd):$(pwd) {params.container_path} /opt/conda/bin/nextPolish $OUTDIR/run.cfg 2>&1 | tee -a logs/nextpolish.log
-
-        POLISHED_ASSEMBLY=$(find "$WORKDIR" "$OUTDIR" -maxdepth 4 -type f \\( -name '*nextpolish*.fasta' -o -name '*nextpolish*.fa' -o -name '*polish*.fasta' -o -name '*polish*.fa' \\) | head -n 1)
-        if [ -z "$POLISHED_ASSEMBLY" ]; then
-            echo "Could not find NextPolish output FASTA in $WORKDIR or $OUTDIR" >&2
-            exit 1
-        fi
-        cp "$POLISHED_ASSEMBLY" {output.assembly}
+        # Clean up temporary split reads
+        rm -f $R1 $R2
         """

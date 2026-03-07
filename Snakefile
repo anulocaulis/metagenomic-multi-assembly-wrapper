@@ -32,7 +32,10 @@ FLYE_ASSEMBLY_CONTAINER = "containers/flye_assembler.sif"
 QC_CONTAINER = "containers/qc_tools_miniconda.sif"
 CHOPPER_CONTAINER = "containers/chopper_0.7.0--hdcf5f25_0.sif"
 PORECHOP_CONTAINER = "containers/porechop_0.2.4--py39h2de1943_9.sif"
-NEXTPOLISH_CONTAINER = "containers/nextpolish.sif"
+METACONNET_CONTAINER = "containers/metaconnet.sif"
+
+# Ensure singularity is on PATH on compute nodes
+shell.prefix("export PATH=/usr/local/bin:$PATH; ")
 
 # ===========================
 # Include Module Rules
@@ -73,5 +76,5 @@ rule all:
         # Hybrid assemblies (only for long-read samples)
         expand("{output_dir}/{sample}/assembly.metaspades_hybrid/assembly.fasta", 
                output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
-        expand("{output_dir}/{sample}/assembly.nextpolish/assembly.fasta", 
+        expand("{output_dir}/{sample}/assembly.metaconnet/assembly.fasta",
                output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
