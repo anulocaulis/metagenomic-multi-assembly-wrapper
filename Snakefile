@@ -48,8 +48,11 @@ include: "modules/assembly.smk"
 # Target Rule
 # ===========================
 
-rule all:
-    input:
+if config.get("metaconnet_only", False):
+    ALL_TARGETS = expand("{output_dir}/{sample}/assembly.metaconnet/assembly.fasta",
+                         output_dir=config["output_dir"], sample=LONG_READ_SAMPLES)
+else:
+    ALL_TARGETS = [
         # Read prep outputs (all samples get trimmed short reads)
         expand("trimmed_reads/{sample}_interleaved_trimmed.fastq.gz", sample=ALL_SAMPLES),
         
@@ -78,3 +81,8 @@ rule all:
                output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
         expand("{output_dir}/{sample}/assembly.metaconnet/assembly.fasta",
                output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
+    ]
+
+rule all:
+    input:
+        ALL_TARGETS

@@ -5,9 +5,9 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=32
-#SBATCH --mem=128G
-#SBATCH --time=6-23:00:00
-#SBATCH --partition=math-alderaan
+#SBATCH --mem=900G
+#SBATCH --time=2-23:00:00
+#SBATCH --partition=math-alderaan-gpu
 
 set -euo pipefail
 

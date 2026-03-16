@@ -252,10 +252,10 @@ rule metaconnet:
         R2={params.outdir}/sr_R2.fastq.gz
         zcat {input.short_reads} | \
             paste - - - - - - - - | \
-            awk 'BEGIN{{OFS="\n"}} {{print $1,$2,$3,$4}}' | gzip -c > $R1
+            awk 'BEGIN{{OFS="\\n"}} {{print $1,$2,$3,$4}}' | gzip -c > $R1
         zcat {input.short_reads} | \
             paste - - - - - - - - | \
-            awk 'BEGIN{{OFS="\n"}} {{print $5,$6,$7,$8}}' | gzip -c > $R2
+            awk 'BEGIN{{OFS="\\n"}} {{print $5,$6,$7,$8}}' | gzip -c > $R2
 
         singularity exec -B $PWD {params.container_path} \
             MetaCONNET \
