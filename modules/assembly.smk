@@ -247,6 +247,29 @@ rule metaconnet:
         set -euo pipefail
         mkdir -p {params.outdir}
 
+        # Provide MetaCONNET's expected hardcoded samtools path and shim unsupported flags
+        SAMTOOLS_DIR=$PWD/{params.outdir}/axbio_samtools
+        mkdir -p $SAMTOOLS_DIR
+        cat > $SAMTOOLS_DIR/samtools << 'EOF'
+#!/usr/bin/env bash
+set -euo pipefail
+
+if [ "$#" -gt 0 ] && [ "$1" = "merge" ]; then
+    shift
+    FILTERED_ARGS=""
+    for arg in "$@"; do
+        if [ "$arg" != "--write-index" ]; then
+            FILTERED_ARGS="$FILTERED_ARGS $(printf '%q' "$arg")"
+        fi
+    done
+    eval "set -- $FILTERED_ARGS"
+    exec /opt/conda/envs/metaconda/bin/samtools merge "$@"
+fi
+
+exec /opt/conda/envs/metaconda/bin/samtools "$@"
+EOF
+        chmod +x $SAMTOOLS_DIR/samtools
+
         # Split interleaved paired-end reads into R1 / R2 for MetaCONNET --sr
         R1={params.outdir}/sr_R1.fastq.gz
         R2={params.outdir}/sr_R2.fastq.gz
@@ -257,8 +280,11 @@ rule metaconnet:
             paste - - - - - - - - | \
             awk 'BEGIN{{OFS="\\n"}} {{print $5,$6,$7,$8}}' | gzip -c > $R2
 
-        singularity exec -B $PWD {params.container_path} \
-            MetaCONNET \
+        singularity exec \
+            -B $PWD \
+            -B $SAMTOOLS_DIR:/AxBio_share/software/samtools-1.16/bin \
+            {params.container_path} \
+            /opt/conda/envs/metaconda/bin/metaconnet \
                 --sr $R1 $R2 \
                 --lr {input.long_reads} \
                 --c  {input.contigs} \

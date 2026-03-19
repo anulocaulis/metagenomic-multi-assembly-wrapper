@@ -87,6 +87,9 @@ From: ubuntu:22.04
     ln -sf /opt/conda/envs/metaconda/bin/minimap2 /usr/local/bin/minimap2
     ln -sf /opt/conda/envs/metaconda/bin/samtools /usr/local/bin/samtools
     ln -sf /opt/conda/envs/metaconda/bin/reformat.sh /usr/local/bin/reformat.sh
+    ln -sf /opt/conda/envs/metaconda/bin/metaconnet /usr/local/bin/metaconnet
+    ln -sf /opt/conda/envs/metaconda/bin/metaconnet_prepare /usr/local/bin/metaconnet_prepare
+    ln -sf /opt/conda/envs/metaconda/bin/metaconnet_train /usr/local/bin/metaconnet_train
 
     # --- Clean up ---
     conda clean --all -y

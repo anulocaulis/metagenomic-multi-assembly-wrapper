@@ -43,6 +43,7 @@ shell.prefix("export PATH=/usr/local/bin:$PATH; ")
 
 include: "modules/read_prep.smk"
 include: "modules/assembly.smk"
+include: "modules/assembly_prep.smk"
 
 # ===========================
 # Target Rule
@@ -73,11 +74,17 @@ else:
                output_dir=config["output_dir"], sample=ALL_SAMPLES),
         expand("{output_dir}/{sample}/assembly.metaspades/contigs.fasta", 
                output_dir=config["output_dir"], sample=ALL_SAMPLES),
+        expand("{output_dir}/{sample}/assembly.metaspades/contigs.ge1000.fa",
+               output_dir=config["output_dir"], sample=ALL_SAMPLES),
         expand("{output_dir}/{sample}/assembly.idbaud/assembly.fasta", 
                output_dir=config["output_dir"], sample=ALL_SAMPLES),
         
         # Hybrid assemblies (only for long-read samples)
         expand("{output_dir}/{sample}/assembly.metaspades_hybrid/assembly.fasta", 
+               output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
+        expand("{output_dir}/{sample}/assembly.metaspades_hybrid/contigs.ge1000.fa",
+               output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
+        expand("{output_dir}/{sample}/assembly.metamdbg/contigs.ge1000.fa",
                output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
         expand("{output_dir}/{sample}/assembly.metaconnet/assembly.fasta",
                output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
