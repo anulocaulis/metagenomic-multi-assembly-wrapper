@@ -5,6 +5,7 @@ jobs: 13                        # Reduced from 20 to prevent OOM - limits concur
 use-conda: True
 conda-frontend: mamba
 latency-wait: 4               # Time (seconds) to wait between job status checks
+job-name: "{rule}_{wildcards.sample}"  # Descriptive SLURM job names
 
 # 2. SNAKEMAKE RESOURCE DEFAULTS
 executor: slurm

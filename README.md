@@ -34,12 +34,21 @@ Implemented in `modules/assembly.smk`.
 - **IDBA-UD** short-read assembly (`idbaud_assembly`)
 - **metaSPAdes** short-read assembly (`metaspades_assembly`)
 - **MEGAHIT** short-read assembly (`megahit_assembly`)
-- **Hybrid metaSPAdes** short+long assembly (`metaspades_hybrid_assembly`)
+- **Hybrid MetaSPAdes** short+long assembly (`metaspades_hybrid_assembly`)
+- **Hybrid OPERA-MS** short+long assembly scaffolding (`opera_ms_hybrid_assembly`)
+- **MetaCONNET** long-read polishing/hybrid scaffolding (`metaconnet`)
 - **Flye + NextPolish** polishing workflow (`bwa_mem_map_to_flye`, `nextpolish`)
+
+### 3) Assembly post-processing
+
+Implemented in `modules/assembly_prep.smk`.
+
+- **Minimum contig-length filter (1000 bp)** with BBDuk (`filter_contigs_min_length`)
+- Produces `contigs.ge1000.fa` from assembler `contigs.fasta` outputs
 
 Primary outputs are written under `assemblies/{sample}/...`.
 
-### 3) Containerized execution
+### 4) Containerized execution
 
 Container variables are defined in `Snakefile`.
 
@@ -49,6 +58,8 @@ Container variables are defined in `Snakefile`.
 - `QC_CONTAINER = containers/qc_tools_miniconda.sif`
 - `CHOPPER_CONTAINER = containers/chopper_0.7.0--hdcf5f25_0.sif`
 - `PORECHOP_CONTAINER = containers/porechop_0.2.4--py39h2de1943_9.sif`
+- `METACONNET_CONTAINER = containers/metaconnet.sif`
+- `OPERA_MS_CONTAINER = containers/opera-ms_assembler.sif`
 
 `idbaud_assembly` is configured to run with `containers/idba-ud_151.sif`.
 
@@ -58,6 +69,7 @@ Container variables are defined in `Snakefile`.
 - `config.yaml`: sample lists, input path templates, thread defaults, output dir
 - `modules/read_prep.smk`: preprocessing rules
 - `modules/assembly.smk`: assembly and polishing rules
+- `modules/assembly_prep.smk`: post-assembly filtering rules
 - `containers/`: Singularity images and definition files
 - `logs/`, `benchmarks/`: rule logs and runtime benchmarks
 - `assemblies/`: per-sample assembly outputs
@@ -105,5 +117,5 @@ snakemake --profile slurm_profile
 ## Notes
 
 - Rules currently request high-memory resources for assembly jobs.
-- Some targets in `rule all` may be toggled/commented during development.
+- `rule all` currently includes `contigs.ge1000.fa` targets for MetaSPAdes, MetaSPAdes hybrid, and MetaMDBG outputs.
 - Existing files in `assemblies/` can satisfy targets and cause jobs to be skipped.

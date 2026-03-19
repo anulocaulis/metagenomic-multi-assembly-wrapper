@@ -1,0 +1,186 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+
+# To build this container image, use the command below:
+# sudo singularity build opera-ms_assembler.sif opera-ms_assembler.def
+
+
+%environment
+    export LC_ALL=C
+    export PATH="/opt/OPERA-MS:/opt/OPERA-MS/tools_opera_ms:/usr/local/bin:/usr/bin:/opt/conda/bin:$PATH"
+
+%post
+    export DEBIAN_FRONTEND=noninteractive
+    export TZ=Etc/UTC
+
+    # Update and install core system dependencies
+    apt-get update -y
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        autoconf \
+        automake \
+        cmake \
+        make \
+        wget \
+        git \
+        curl \
+        unzip \
+        bzip2 \
+        ca-certificates \
+        perl \
+        cpanminus \
+        python3 \
+        python3-pip \
+        r-base-core \
+        zlib1g-dev \
+        libbz2-dev \
+        liblzma-dev \
+        libssl-dev \
+        default-jre \
+        megahit \
+        samtools \
+        bwa \
+        minimap2 \
+        mummer \
+        mash \
+        racon
+
+    # Optional distro packages (availability may vary by mirror/release)
+    apt-get install -y --no-install-recommends spades pilon blasr || true
+
+    ln -fs /usr/share/zoneinfo/$TZ /etc/localtime
+    echo $TZ > /etc/timezone
+    dpkg-reconfigure -f noninteractive tzdata
+
+    # Install Miniforge (conda-forge based) to avoid Anaconda ToS channel prompts
+    curl -sSL https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh -o /tmp/miniforge.sh
+    bash /tmp/miniforge.sh -b -p /opt/conda
+    rm -f /tmp/miniforge.sh
+    export PATH="/usr/local/bin:/usr/bin:/opt/conda/bin:$PATH"
+
+    conda config --system --remove-key channels || true
+    conda config --system --prepend channels conda-forge
+    conda config --system --append channels bioconda
+    conda config --system --set channel_priority strict
+    conda install -y \
+        megahit \
+        spades \
+        samtools \
+        bwa \
+        blasr \
+        minimap2 \
+        racon \
+        mash \
+        mummer \
+        pilon
+
+    apt-get clean
+    rm -rf /var/lib/apt/lists/*
+
+    # Clone and build OPERA-MS
+    cd /opt && \
+    git clone https://github.com/CSB5/OPERA-MS.git && \
+    cd OPERA-MS && \
+    make
+
+    # Install OPERA-MS Perl modules using the provided installer
+    cd /opt/OPERA-MS && \
+    /usr/bin/perl tools_opera_ms/install_perl_module.pl || true
+
+    # Fallback Perl module installation for environments where installer is partial
+    /usr/bin/cpanm --notest Switch IPC::Run Regexp::Common
+    /usr/bin/cpanm --notest Statistics::R || /usr/bin/cpanm --force --notest Statistics::R
+
+    # Ensure OPERA-MS can use a functional system megahit binary
+    MEGAHIT_BIN="$(command -v megahit || true)"
+    if [ -n "$MEGAHIT_BIN" ]; then
+        mkdir -p /opt/OPERA-MS/tools_opera_ms/megahit_v1.0.4-beta_LINUX_CPUONLY_x86_64-bin
+        ln -sf "$MEGAHIT_BIN" /opt/OPERA-MS/tools_opera_ms/megahit_v1.0.4-beta_LINUX_CPUONLY_x86_64-bin/megahit
+        ln -sf "$MEGAHIT_BIN" /opt/OPERA-MS/tools_opera_ms/megahit
+        ln -sf "$MEGAHIT_BIN" /usr/local/bin/megahit
+    fi
+
+    # Ensure OPERA-MS can use functional binaries for all external dependencies
+    SPADES_BIN="$(command -v spades.py || command -v spades || true)"
+    if [ -n "$SPADES_BIN" ]; then
+        mkdir -p /opt/OPERA-MS/tools_opera_ms/SPAdes-3.13.0-Linux/bin
+        ln -sf "$SPADES_BIN" /opt/OPERA-MS/tools_opera_ms/SPAdes-3.13.0-Linux/bin/spades.py
+        ln -sf "$SPADES_BIN" /opt/OPERA-MS/tools_opera_ms/spades.py
+    fi
+
+    for tool_name in samtools bwa blasr minimap2 racon mash; do
+        TOOL_BIN="$(command -v "$tool_name" || true)"
+        if [ -n "$TOOL_BIN" ]; then
+            ln -sf "$TOOL_BIN" "/opt/OPERA-MS/tools_opera_ms/$tool_name"
+            ln -sf "$TOOL_BIN" "/usr/local/bin/$tool_name"
+        fi
+    done
+
+    MUMMER_BIN="$(command -v nucmer || command -v mummer || true)"
+    if [ -n "$MUMMER_BIN" ]; then
+        ln -sf "$MUMMER_BIN" /opt/OPERA-MS/tools_opera_ms/mummer
+    fi
+
+    PILON_BIN="$(command -v pilon || true)"
+    if [ -n "$PILON_BIN" ]; then
+        ln -sf "$PILON_BIN" /opt/OPERA-MS/tools_opera_ms/pilon
+    fi
+
+    # Verify dependencies via OPERA-MS installer check
+    cd /opt/OPERA-MS && \
+    /usr/bin/perl OPERA-MS.pl check-dependency
+
+    # Create a convenience launcher
+    cat > /usr/local/bin/opera-ms << 'EOF'
+#!/bin/bash
+exec /usr/bin/perl /opt/OPERA-MS/OPERA-MS.pl "$@"
+EOF
+    chmod +x /usr/local/bin/opera-ms
+
+%runscript
+    echo "==================================================================="
+    echo "This container includes the OPERA-MS metagenome hybrid assembler:"
+    echo "  - OPERA-MS.pl"
+    echo "  - opera-ms (wrapper command)"
+    echo "-------------------------------------------------------------------"
+    echo "To run OPERA-MS, use the 'exec' command:"
+    echo "singularity exec opera-ms_assembler.sif opera-ms --help"
+    echo "singularity exec opera-ms_assembler.sif perl /opt/OPERA-MS/OPERA-MS.pl --help"
+    echo "==================================================================="
+
+    # Execute the command passed by the user
+    exec "$@"
+
+%labels
+    Maintainer lowry-nitrogen-team
+    CreationDate 2026-03-19
+    Version 1.0-opera-ms
+    Description Singularity container with OPERA-MS hybrid metagenome assembler
+
+
+%help
+This Apptainer (Singularity) container provides OPERA-MS for hybrid metagenome
+assembly using long and short reads.
+
+Installed primary tool:
+- OPERA-MS (from https://github.com/CSB5/OPERA-MS)
+
+Dependency handling:
+- cpanm is installed as the key dependency manager for Perl modules.
+- OPERA-MS binaries are compiled/installed during build and placed under
+  /opt/OPERA-MS/tools_opera_ms.
+
+USAGE:
+To run OPERA-MS, use the 'exec' command and call either wrapper or Perl entrypoint:
+
+singularity exec opera-ms_assembler.sif opera-ms --help
+singularity exec opera-ms_assembler.sif perl /opt/OPERA-MS/OPERA-MS.pl --help
+
+Example skeleton command:
+singularity exec opera-ms_assembler.sif opera-ms \
+  --contig-file assembly.fasta \
+  --short-read1 reads_R1.fastq \
+  --short-read2 reads_R2.fastq \
+  --long-read long_reads.fastq \
+  --out-dir opera_ms_out

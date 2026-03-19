@@ -192,6 +192,65 @@ rule metaspades_hybrid_assembly:
         cp {params.outdir}/contigs.fasta {output.assembly}
         """
 
+
+# ---
+# Step 6b: Hybrid Assembly with OPERA-MS (MetaSPAdes contigs + ONT long reads)
+# ---
+rule opera_ms_hybrid_assembly:
+    input:
+        short_reads = "trimmed_reads/{sample}_interleaved_trimmed_polyG_filtered.fastq.gz",
+        long_reads = "data/{sample}_long_reads_filtered.fastq.gz",
+        contigs = "{output_dir}/{sample}/assembly.metaspades/contigs.fasta"
+    output:
+        assembly = "{output_dir}/{sample}/opera_ms/assembly.fasta"
+    params:
+        outdir = "{output_dir}/{sample}/opera_ms",
+        container_path = OPERA_MS_CONTAINER
+    threads: config["threads"]
+    resources:
+        mem_mb=512000
+    container: OPERA_MS_CONTAINER
+    shell:
+        """
+        set -euo pipefail
+        mkdir -p {params.outdir}
+
+        # De-interleave paired-end reads.
+        # OPERA-MS requires separate R1 and R2 files
+        R1={params.outdir}/sr_R1.fastq.gz
+        R2={params.outdir}/sr_R2.fastq.gz
+
+        zcat {input.short_reads} | \
+            paste - - - - - - - - | \
+            awk 'BEGIN{{OFS="\\n"}} {{print $1,$2,$3,$4}}' | gzip -c > $R1
+        zcat {input.short_reads} | \
+            paste - - - - - - - - | \
+            awk 'BEGIN{{OFS="\\n"}} {{print $5,$6,$7,$8}}' | gzip -c > $R2
+
+        # Run OPERA-MS hybrid scaffolding
+        singularity exec -B $PWD {params.container_path} opera-ms \
+            --contig-file {input.contigs} \
+            --short-read1 $R1 \
+            --short-read2 $R2 \
+            --long-read {input.long_reads} \
+            --out-dir {params.outdir} \
+            --num-processors {threads}
+
+        # OPERA-MS output file discovery
+        OPERA_OUTPUT="{params.outdir}/scaffolds.fasta"
+        if [ ! -s "$OPERA_OUTPUT" ]; then
+            OPERA_OUTPUT="{params.outdir}/assembly.fasta"
+        fi
+        if [ ! -s "$OPERA_OUTPUT" ]; then
+            echo "ERROR: OPERA-MS did not produce expected output file" >&2
+            ls -lh {params.outdir}/ | head -20 >&2
+            exit 1
+        fi
+
+        cp "$OPERA_OUTPUT" {output.assembly}
+        rm -f $R1 $R2
+        """
+
 # ---
 # Step 7: Map Short Reads to Flye Assembly with BWA MEM
 # ---
