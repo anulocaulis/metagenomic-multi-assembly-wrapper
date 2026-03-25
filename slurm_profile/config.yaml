@@ -5,14 +5,14 @@ jobs: 13                        # Reduced from 20 to prevent OOM - limits concur
 use-conda: True
 conda-frontend: mamba
 latency-wait: 4               # Time (seconds) to wait between job status checks
-job-name: "{rule}_{wildcards.sample}"  # Descriptive SLURM job names
+jobname: "{rule}_{jobid}"  # Descriptive SLURM job names; must include {jobid}
 
 # 2. SNAKEMAKE RESOURCE DEFAULTS
 executor: slurm
 slurm-logdir: /storage/biology/projects/miller-lowry/beitner/Lowry-assemblies/slurm_logs
 default-resources:
   slurm_partition: "math-alderaan"
-  runtime: "2880"             # 48 hours in minutes (max for math-alderaan is 7 days)
+  runtime: "9720"             # 6 days 18 hours in minutes (max for math-alderaan is 7 days)
   mem_mb: 360000              # Increased to 350GB per job (was 240GB) - prevents metaspades OOM
   threads: 16                 # 16 threads per job - good balance for assembly
   slurm_account: biology-miller-annotation

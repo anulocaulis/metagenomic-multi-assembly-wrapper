@@ -30,7 +30,7 @@ rule metamdbg_assembly:
     input:
         reads = "data/{sample}_long_reads_filtered.fastq.gz"
     output:
-        assembly = f"{config['output_dir']}/{{sample}}/assembly.metamdbg/contigs.fasta"
+        assembly = f"{config['output_dir']}/{{sample}}/assembly.metamdbg/metamdbg.contigs.fasta"
     params:
         outdir = f"{config['output_dir']}/{{sample}}/assembly.metamdbg",
         container_path = ASSEMBLY_CONTAINER
@@ -41,8 +41,17 @@ rule metamdbg_assembly:
     shell:
         """
         singularity exec --bind $(pwd):$(pwd) {params.container_path} metaMDBG asm --threads {threads} --in-ont {input.reads} --out-dir {params.outdir}
-        # MetaMDBG outputs contigs.fasta.gz, decompress for consistency
-        gunzip -f {params.outdir}/contigs.fasta.gz
+        # MetaMDBG output names vary by version; normalize to metamdbg.contigs.fasta
+        if [ -f {params.outdir}/metamdbg.contigs.fasta.gz ]; then
+            gunzip -f {params.outdir}/metamdbg.contigs.fasta.gz
+        fi
+        if [ -f {params.outdir}/contigs.fasta.gz ]; then
+            gunzip -f {params.outdir}/contigs.fasta.gz
+        fi
+        if [ -f {params.outdir}/contigs.fasta ] && [ ! -f {params.outdir}/metamdbg.contigs.fasta ]; then
+            mv {params.outdir}/contigs.fasta {params.outdir}/metamdbg.contigs.fasta
+        fi
+        test -s {output.assembly}
         """
 
 
@@ -51,9 +60,9 @@ rule metamdbg_assembly:
 # ---
 rule metamdbg_assembly_direct:
     input:
-        reads = f"{config['output_dir']}/{{sample}}/assembly.metamdbg/contigs.fasta"
+        reads = f"{config['output_dir']}/{{sample}}/assembly.metamdbg/metamdbg.contigs.fasta"
     output:
-        assembly = f"{config['output_dir']}/{{sample}}/assembly.metamdbg/contigs.fasta"
+        assembly = f"{config['output_dir']}/{{sample}}/assembly.metamdbg/metamdbg.contigs.fasta"
     params:
         outdir = f"{config['output_dir']}/{{sample}}/assembly.metamdbg",
         container_path = ASSEMBLY_CONTAINER
@@ -64,7 +73,7 @@ rule metamdbg_assembly_direct:
     shell:
         """
         singularity exec --bind $(pwd):$(pwd) {params.container_path} metaMDBG asm --out-dir {params.outdir} --in-ont {input.reads} --threads {threads} && \
-        gzip {params.outdir}/contigs.fasta
+        test -s {output.assembly}
         """
 
 
@@ -133,7 +142,7 @@ rule megahit_assembly:
     input:
         reads = "trimmed_reads/{sample}_interleaved_trimmed_polyG_filtered.fastq.gz"
     output:
-        assembly = "{output_dir}/{sample}/assembly.megahit/final.contigs.fa"
+        assembly = "{output_dir}/{sample}/assembly.megahit/megahit.final.contigs.fa"
     params:
         outdir = "{output_dir}/{sample}/assembly.megahit",
         container_path = ASSEMBLY_CONTAINER
@@ -208,7 +217,8 @@ rule opera_ms_hybrid_assembly:
         container_path = OPERA_MS_CONTAINER
     threads: config["threads"]
     resources:
-        mem_mb=512000
+        mem_mb=900000,
+        slurm_partition="math-alderaan-gpu"
     container: OPERA_MS_CONTAINER
     shell:
         """
@@ -227,28 +237,38 @@ rule opera_ms_hybrid_assembly:
             paste - - - - - - - - | \
             awk 'BEGIN{{OFS="\\n"}} {{print $5,$6,$7,$8}}' | gzip -c > $R2
 
+        # OPERA-MS does not accept gzipped long-read input
+        LONG_READS={params.outdir}/long_reads.fastq
+        zcat {input.long_reads} > $LONG_READS
+
         # Run OPERA-MS hybrid scaffolding
         singularity exec -B $PWD {params.container_path} opera-ms \
             --contig-file {input.contigs} \
             --short-read1 $R1 \
             --short-read2 $R2 \
-            --long-read {input.long_reads} \
+            --long-read $LONG_READS \
             --out-dir {params.outdir} \
             --num-processors {threads}
 
         # OPERA-MS output file discovery
-        OPERA_OUTPUT="{params.outdir}/scaffolds.fasta"
+        OPERA_OUTPUT="{params.outdir}/contigs.polished.fasta"
+        if [ ! -s "$OPERA_OUTPUT" ]; then
+            OPERA_OUTPUT="{params.outdir}/contigs.fasta"
+        fi
+        if [ ! -s "$OPERA_OUTPUT" ]; then
+            OPERA_OUTPUT="{params.outdir}/scaffolds.fasta"
+        fi
         if [ ! -s "$OPERA_OUTPUT" ]; then
             OPERA_OUTPUT="{params.outdir}/assembly.fasta"
         fi
         if [ ! -s "$OPERA_OUTPUT" ]; then
             echo "ERROR: OPERA-MS did not produce expected output file" >&2
-            ls -lh {params.outdir}/ | head -20 >&2
+            find {params.outdir} -maxdepth 3 -type f | sort | head -80 >&2
             exit 1
         fi
 
         cp "$OPERA_OUTPUT" {output.assembly}
-        rm -f $R1 $R2
+        rm -f $R1 $R2 $LONG_READS
         """
 
 # ---
@@ -291,7 +311,7 @@ rule metaconnet:
         long_reads = "data/{sample}_long_reads_filtered.fastq.gz",
         contigs = f"{config['output_dir']}/{{sample}}/assembly.flye/assembly.fasta"
     output:
-        assembly = f"{config['output_dir']}/{{sample}}/assembly.metaconnet/assembly.fasta"
+        assembly = f"{config['output_dir']}/{{sample}}/assembly.metaconnet/{{sample}}_polished.fasta"
     params:
         outdir = f"{config['output_dir']}/{{sample}}/assembly.metaconnet",
         container_path = METACONNET_CONTAINER,
@@ -352,8 +372,8 @@ EOF
                 --t  {threads} \
                 --fc {params.flowcell}
 
-        # MetaCONNET names its primary output <task_name>.fasta
-        cp {params.outdir}/{wildcards.sample}.fasta {output.assembly}
+        # MetaCONNET names its primary polished output <task_name>_polished.fasta
+        test -s {output.assembly}
 
         # Clean up temporary split reads
         rm -f $R1 $R2

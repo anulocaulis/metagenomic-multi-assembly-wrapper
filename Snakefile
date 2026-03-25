@@ -45,52 +45,48 @@ shell.prefix("export PATH=/usr/local/bin:$PATH; ")
 include: "modules/read_prep.smk"
 include: "modules/assembly.smk"
 include: "modules/assembly_prep.smk"
+include: "modules/subsampling.smk"
 
 # ===========================
 # Target Rule
 # ===========================
 
 if config.get("metaconnet_only", False):
-    ALL_TARGETS = expand("{output_dir}/{sample}/assembly.metaconnet/assembly.fasta",
-                         output_dir=config["output_dir"], sample=LONG_READ_SAMPLES)
+    ALL_TARGETS = expand(
+        "{output_dir}/{sample}/assembly.metaconnet/{sample}_polished.fasta",
+        output_dir=config["output_dir"], sample=LONG_READ_SAMPLES
+    )
 else:
     ALL_TARGETS = [
         # Read prep outputs (all samples get trimmed short reads)
         expand("trimmed_reads/{sample}_interleaved_trimmed.fastq.gz", sample=ALL_SAMPLES),
-        
+
         # PolyG filtering (all samples)
         expand("trimmed_reads/{sample}_interleaved_trimmed_polyG_filtered.fastq.gz", sample=ALL_SAMPLES),
-        
+
         # Long-read filtering (only long-read samples)
         expand("data/{sample}_long_reads_filtered.fastq.gz", sample=LONG_READ_SAMPLES),
-        
+
         # Long-read assemblies (only on samples with long reads)
-        expand("{output_dir}/{sample}/assembly.flye/assembly.fasta", 
-               output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
-        expand("{output_dir}/{sample}/assembly.metamdbg/contigs.fasta", 
-               output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
-        
+        expand("{output_dir}/{sample}/assembly.flye/assembly.fasta", output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
+        expand("{output_dir}/{sample}/assembly.metamdbg/metamdbg.contigs.fasta", output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
+
         # Short-read assemblies (all samples)
-        expand("{output_dir}/{sample}/assembly.megahit/final.contigs.fa", 
-               output_dir=config["output_dir"], sample=ALL_SAMPLES),
-        expand("{output_dir}/{sample}/assembly.metaspades/contigs.fasta", 
-               output_dir=config["output_dir"], sample=ALL_SAMPLES),
-        expand("{output_dir}/{sample}/assembly.metaspades/contigs.ge1000.fa",
-               output_dir=config["output_dir"], sample=ALL_SAMPLES),
-        expand("{output_dir}/{sample}/assembly.idbaud/assembly.fasta", 
-               output_dir=config["output_dir"], sample=ALL_SAMPLES),
-        
+        expand("{output_dir}/{sample}/assembly.megahit/megahit.final.contigs.fa", output_dir=config["output_dir"], sample=ALL_SAMPLES),
+        expand("{output_dir}/{sample}/assembly.metaspades/contigs.fasta", output_dir=config["output_dir"], sample=ALL_SAMPLES),
+        expand("{output_dir}/{sample}/assembly.metaspades/contigs.ge1000.fa", output_dir=config["output_dir"], sample=ALL_SAMPLES),
+        expand("{output_dir}/{sample}/assembly.idbaud/assembly.fasta", output_dir=config["output_dir"], sample=ALL_SAMPLES),
+
         # Hybrid assemblies (only for long-read samples)
-        expand("{output_dir}/{sample}/assembly.metaspades_hybrid/assembly.fasta", 
-               output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
-        expand("{output_dir}/{sample}/opera_ms/assembly.fasta",
-               output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
-        expand("{output_dir}/{sample}/assembly.metaspades_hybrid/contigs.ge1000.fa",
-               output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
-        expand("{output_dir}/{sample}/assembly.metamdbg/contigs.ge1000.fa",
-               output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
-        expand("{output_dir}/{sample}/assembly.metaconnet/assembly.fasta",
-               output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
+        expand("{output_dir}/{sample}/assembly.metaspades_hybrid/assembly.fasta", output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
+        expand("{output_dir}/{sample}/opera_ms/assembly.fasta", output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
+        expand("{output_dir}/{sample}/assembly.metaspades_hybrid/contigs.ge1000.fa", output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
+        expand("{output_dir}/{sample}/assembly.metamdbg/contigs.ge1000.fa", output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
+        expand("{output_dir}/{sample}/assembly.metaconnet/{sample}_polished.fasta", output_dir=config["output_dir"], sample=LONG_READ_SAMPLES),
+
+        # S1 subsampling (12 subsamples at different nucleotide percentages)
+        expand("subsampling/S1_long_reads_subsample_{ratio_idx}.fastq.gz", ratio_idx=range(12)),
+        "subsampling/subsample_summary.txt",
     ]
 
 rule all:
